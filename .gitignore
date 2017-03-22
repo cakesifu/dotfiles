@@ -1,0 +1,3 @@
+user/builds/**/*
+!user/builds/**/PKGBUILD
+user/.config/nvim/autoload/*.old

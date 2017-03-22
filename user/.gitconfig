@@ -1,0 +1,20 @@
+[user]
+  name = Cezar Berea
+  email = berea.cezar@gmail.com
+[color]
+  ui = auto
+[core]
+  excludesfile = /home/cezar/gitignore
+  editor=nvim
+[alias]
+  latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short) [%(committername)]'
+  standup = log --since '1 day ago' --oneline --author cezar
+  ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
+  graph = log --graph --all  --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
+  st = status -sb
+  ds = diff --staged
+  co = checkout
+[push]
+  default = tracking
+[gui]
+  warndetachedcommit = true

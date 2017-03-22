@@ -1,0 +1,55 @@
+conky.config = {
+
+	background = true,
+	update_interval = 1.5,
+	text_buffer_size = 1024,
+	total_run_times = 0,
+
+
+	alignment = 'bottom_left',
+	gap_x = 5,
+	gap_y = 1,
+
+	own_window = false,
+
+	use_xft = true,
+	font = 'Audimat Mono:size=8',
+	font = 'Audimat Mono:size=8',
+	xftalpha = 1,
+	override_utf8_locale = true,
+
+	imlib_cache_size = 60,
+	double_buffer = true,
+	draw_shades = false,
+	default_shade_color = '#777777',
+
+	short_units = true,
+	pad_percents = 0,
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	uppercase = false,
+	use_spacer = 'right',
+
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	border_width = 0,
+
+
+	out_to_console = false,
+
+	top_name_width = 10,
+
+	lua_load = '.conky.lua',
+
+	default_color = '#93a1a1',
+	default_outline_color = '#657b83',
+
+	pad_percents = 2,
+
+};
+
+conky.text = [[
+${lua_parse bar}\
+${if_match ${cpu} == 100} !!${cpu}!! ${endif}
+]];

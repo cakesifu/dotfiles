@@ -1,0 +1,30 @@
+snippet cl "console.log(...)" b
+console.log(${0});
+endsnippet
+
+
+snippet red "export function REDUCER(state, action)" b
+export default function $0(state, action) {
+	$0
+}
+endsnippet
+
+
+snippet comp "export default class Component extends Component {"
+import React from "react";
+
+import Component from "$1";
+
+export default class $2 extends Component {
+	render() {
+		return (
+			<div className="$3">
+				$0
+			</div>
+		);
+	}
+}
+
+$2.propTypes = {
+};
+endsnippet

@@ -1,0 +1,97 @@
+WORKON_HOME="$HOME/pyenv"
+PATH=$HOME/bin:$PATH
+
+if [ -d /opt/google_appengine ]; then
+  PATH="$PATH:/opt/google_appengine"
+fi
+
+if [ -d /usr/local/heroku/bin ]; then
+  PATH="$PATH:/usr/local/heroku/bin"
+fi
+
+export EDITOR=vim
+export PATH
+export WORKON_HOME
+
+# load rvm if available
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# load nvm if available
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[ -z "$PS1" ] && return
+
+# load python virtualenv wrapper if available
+hash virtualenvwrapper_lazy.sh 2>/dev/null && source "$(which virtualenvwrapper_lazy.sh)"
+
+# do nothing more if not in interactive prompt
+[ -z "$PS1" ] && return
+
+# ----------------------------------------
+#  ALIASES
+# ----------------------------------------
+
+alias ls='ls --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias l='ls -l'
+alias ll='ls -alh'
+
+# ----------------------------------------
+#  PROMPT
+# ----------------------------------------
+
+GIT=''
+RVM=''
+red='\[\e[0;30m\]'
+green='\[\e[1;32m\]'
+yellow='\[\e[1;33m\]'
+blue='\[\e[1;34m\]'
+nocolor='\[\e[0m\]'
+
+if ! type __git_ps1 >/dev/null 2>&1; then
+  if [ -f /usr/share/git/completion/git-prompt.sh ]; then
+    source /usr/share/git/completion/git-prompt.sh
+  fi
+fi
+
+if type __git_ps1 >/dev/null 2>&1; then
+  GIT_PS1_SHOWDIRTYSTATE=true
+  GIT_PS1_SHOWSTASHSTATE=true
+  GIT_PS1_SHOWUNTRACKEDFILES=true
+  GIT_PS1_SHOWUPSTREAM="auto"
+  GIT='\[\e[1;31m\]$(__git_ps1 " (%s)") \[\e[m\]'
+fi
+
+# Uncomment below to enable showing ruby version
+#command -v rvm-prompt > /dev/null 2>&1 &&  RVM=" \[\e[1;33m\](\$(rvm-prompt i v g))\[\e[m\]"
+
+PS1="${green}\u\$nocolor @ ${yellow}\h ${blue}\w $nocolor $GIT$RVM"
+PS1+="\r\n\[\e[0;30m\]\!$nocolor (\t) ${green}\$ $nocolor"
+
+unset GIT RVM red green yelelow blue nocolor
+
+# ----------------------------------------
+#  BASH CONFIG
+# ----------------------------------------
+
+HISTCONTROL=ignoredups:ignorespace # don't put duplicate lines in the history.
+shopt -s histappend # append to the history file, don't overwrite it
+HISTSIZE=500
+HISTFILESIZE=1000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# dir colors
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
+
