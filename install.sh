@@ -47,6 +47,7 @@ do
     config:user)
       install_config "apps" "$USER_DIR"
       install_config "awesome" "$USER_DIR"
+      install_config "aur-builds" "$USER_DIR"
       install_config "bash" "$USER_DIR"
       install_config "bin" "$USER_DIR"
       install_config "git" "$USER_DIR"
