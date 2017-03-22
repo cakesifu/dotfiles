@@ -1,6 +1,5 @@
 #!/bin/bash
 
-command -v stow >/dev/null 2>&1 || { echo >&2 "not installed.  Aborting."; exit 1; }
 
 USER_DIR=${USER_DIR:=$HOME}
 ROOT_DIR=${ROOT_DIR:='/root'}
@@ -8,8 +7,8 @@ SYS_DIR=${ROOT_DIR:='/etc'}
 
 PACKAGES_CONSOLE=(tmux openssh ack htop tree make bash-completion neovim git networkmanager)
 PACKAGES_DESKTOP=(rofi awesome chromium thunar volumeicon lxappearance gnome-themes-standard arandr
-                  conky lightdm slock ttf-bitstream-vera
-                  ttf-dejavu adobe-source-code-pro-fonts
+                  conky lxdm slock 
+                  ttf-bitstream-vera ttf-dejavu adobe-source-code-pro-fonts
                   gitg)
 
 debug() {
@@ -17,14 +16,13 @@ debug() {
 }
 
 check_deps() {
-  hash stow >/dev/null 2>&1 || pacman -S stow
-  hash sudo >/dev/null 2>&1 || pacman -S sudo
+  hash stow >/dev/null 2>&1 || sudo pacman -S stow
 }
 
 install_config() {
   target_path=`realpath ${2}`
   debug "Installing config package:" $1 " -> " $target_path
-  stow -n -t $target_path $1
+  stow -v -t $target_path $1
 }
 
 install_packages() {
@@ -40,15 +38,25 @@ install_packages() {
   esac
 }
 
+check_deps
+
 
 for ARG in "$@"
 do
   case $ARG in
     config:user)
-      install_config "user" "$USER_DIR"
+      install_config "apps" "$USER_DIR"
+      install_config "awesome" "$USER_DIR"
+      install_config "bash" "$USER_DIR"
+      install_config "bin" "$USER_DIR"
+      install_config "git" "$USER_DIR"
+      install_config "nvim" "$USER_DIR"
+      install_config "tmux" "$USER_DIR"
       ;;
     config:root)
-      install_config "root" "$ROOT_DIR"
+      install_config "bash" "$ROOT_DIR"
+      install_config "nvim" "$ROOT_DIR"
+      install_config "tmux" "$ROOT_DIR"
       ;;
     config:sys)
       install_config "sys" "$SYS_DIR"
