@@ -5,9 +5,9 @@ USER_DIR=${USER_DIR:=$HOME}
 ROOT_DIR=${ROOT_DIR:='/root'}
 SYS_DIR=${ROOT_DIR:='/etc'}
 
-PACKAGES_CONSOLE=(tmux openssh ack htop tree make bash-completion neovim git networkmanager)
+PACKAGES_CONSOLE=(tmux openssh ack htop tree make bash-completion neovim git networkmanager curl)
 PACKAGES_DESKTOP=(rofi awesome chromium thunar volumeicon lxappearance gnome-themes-standard arandr
-                  conky lxdm slock 
+                  conky lxdm slock redshift
                   ttf-bitstream-vera ttf-dejavu adobe-source-code-pro-fonts
                   gitg)
 
