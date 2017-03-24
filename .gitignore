@@ -1,4 +1,5 @@
 aur-builds/aur-builds/*/*
 !aur-builds/aur-builds/*/PKGBUILD
 !aur-builds/aur-builds/*/local
+!aur-builds/aur-builds/*/*.own.*
 nvim/.config/nvim/autoload/*.old

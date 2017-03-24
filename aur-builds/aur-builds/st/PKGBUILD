@@ -2,7 +2,7 @@
 # Maintainer: Christoph Vigano <mail@cvigano.de>
 # Maintainer: Mikhail Burakov <mikhail.burakov gmail com>
 
-pkgname=st-solarized
+pkgname=st-custom
 appname='st'
 conflicts=(${appname})
 provides=(${appname})
@@ -17,26 +17,25 @@ url="http://st.suckless.org"
 
 source=(http://dl.suckless.org/st/$appname-$pkgver.tar.gz
         http://st.suckless.org/patches/st-no_bold_colors-20160727-308bfbf.diff
-        http://st.suckless.org/patches/st-solarized-both-20160727-308bfbf.diff
-        http://st.suckless.org/patches/st-vertcenter-20160819-023225e.diff)
+        http://st.suckless.org/patches/st-vertcenter-20160819-023225e.diff
+        st-gruvbox-light.own.diff)
 
 
 sha256sums=('f7870d906ccc988926eef2cc98950a99cc78725b685e934c422c03c1234e6000'
             '2e8cdbeaaa79ed067ffcfdcf4c5f09fb5c8c984906cde97226d4dd219dda39dc'
-            'b7b25ba01b7ae87ec201ebbb1bf82742d5979788ecc6773a356eebe7d90a9703'
-            'f6f8c5b61bbae220edd8019f52962e06dd01a25478e869e9fbc8d79f5a928730')
+            'f6f8c5b61bbae220edd8019f52962e06dd01a25478e869e9fbc8d79f5a928730'
+            '9ff56879e9977c23c802fb9254a997af01876d6b9d8267290f72b20500fedb18')
 
 build() {
   cd "$srcdir/$appname-$pkgver"
   patch -i "$srcdir/st-no_bold_colors-20160727-308bfbf.diff"
-  patch -i "$srcdir/st-solarized-both-20160727-308bfbf.diff"
   patch -i "$srcdir/st-vertcenter-20160819-023225e.diff"
+  patch -i "$srcdir/st-gruvbox-light.own.diff"
 
   cp config.def.h config.h
 
   sed -i 's/Liberation Mono:pixelsize=12:antialias=true:autohint=true/Inconsolata:pixelsize=14:antialias=true:autohint=true/' config.h
   sed -i 's/chscale = 1.0/chscale = 1.2/' config.h
-  sed -i 's/usealtcolors = 0/usealtcolors = 1/' st.c
   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }
 
