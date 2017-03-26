@@ -3,3 +3,4 @@ aur-builds/aur-builds/*/*
 !aur-builds/aur-builds/*/local
 !aur-builds/aur-builds/*/*.own.*
 nvim/.config/nvim/autoload/*.old
+awesome/.config/awesome/config/*.local.lua
