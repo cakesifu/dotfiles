@@ -74,7 +74,7 @@ local function setup_screen(s)
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = beautiful.wibar_height })
 
     -- Add widgets to the wibox
     s.mywibox:setup {

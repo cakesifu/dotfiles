@@ -29,7 +29,7 @@ do
 end
 -- }}}
 
-beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
+beautiful.init("themes/gruvbox/theme.lua")
 modkey = config.modkey
 
 awful.layout.layouts = {
