@@ -5,8 +5,10 @@ USER_DIR=${USER_DIR:=$HOME}
 ROOT_DIR=${ROOT_DIR:='/root'}
 SYS_DIR=${ROOT_DIR:='/etc'}
 
-PACKAGES_CONSOLE=(tmux openssh ack htop tree make bash-completion neovim git networkmanager curl)
-PACKAGES_DESKTOP=(rofi awesome chromium thunar volumeicon lxappearance gnome-themes-standard arandr
+PACKAGES_CONSOLE=(tmux openssh ack htop tree make bash-completion neovim
+                  git networkmanager curl python)
+PACKAGES_DESKTOP=(rofi awesome chromium thunar volumeicon lxappearance-gtk3
+                  gnome-themes-standard arandr
                   conky lxdm slock redshift
                   ttf-bitstream-vera ttf-dejavu adobe-source-code-pro-fonts
                   gitg)
@@ -29,17 +31,35 @@ install_packages() {
   case $1 in
     console)
       debug "Installing packages: " ${PACKAGES_CONSOLE[*]}
-      pacman -Sy ${PACKAGES_CONSOLE[*]}
+      pacman -Sy --needed ${PACKAGES_CONSOLE[*]}
       ;;
     desktop)
       debug "Installing packages: " ${PACKAGES_DESKTOP[*]}
-      pacman -Sy ${PACKAGES_DESKTOP[*]}
+      pacman -Sy --needed ${PACKAGES_DESKTOP[*]}
       ;;
   esac
 }
 
+help_message() {
+  echo "Usage: install.sh [arg...]"
+  echo "   config:user"
+  echo "   config:root           -- requires sudo"
+  echo "   config:sys            -- requires sudo"
+  echo "   packages:console"
+  echo "   packages:desktop"
+  echo " "
+  echo " Other usage:"
+  echo "   stow <package>        - to install some package config"
+  echo "   sudo stow <package>   - install some package in a sys/root path"
+
+}
+
 check_deps
 
+if [ $# -lt 1 ]; then
+  help_message
+  exit 1
+fi
 
 for ARG in "$@"
 do
