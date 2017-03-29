@@ -1,11 +1,13 @@
-local config_folder = "config/"
+local naughty = require("naughty")
+local awful = require("awful")
+local config_folder = awful.util.get_configuration_dir() .. "config/"
 
 local function file_exists(name)
    local f = io.open(name, "r")
    if f ~= nil then io.close(f) return true else return false end
 end
 
-local config = {foo="bar"}
+local config = {}
 
 local function load_file(file)
   if file_exists(file .. ".lua") then
