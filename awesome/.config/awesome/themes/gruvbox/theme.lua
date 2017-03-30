@@ -14,30 +14,47 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-local theme = {}
+local awful = require("awful")
 
+local theme = {}
 -- Working directory (where you place this theme)
-theme.wd = "./themes/gruvbox/"
+theme.wd = awful.util.get_configuration_dir() .. "themes/gruvbox/"
 theme.awesome_wd = "/usr/share/awesome/themes/default/"
 
 theme.font          = "Monospaced 8"
+theme.red = "#cc241d"
+theme.green = "#98971a"
+theme.yellow = "#d79921"
+theme.blue = "#458588"
+theme.purple = "#b16286"
+theme.aqua = "#689d6a"
+theme.gray = "#7c6f64"
+theme.orange = "#d65d0e"
+theme.bg = "#fbf1c7"
+theme.bg0 = "#f9f5d7"
+theme.bg1 = "#ebdbb2"
+theme.bg2 = "#d5c4a1"
+theme.fg = "#3c3836"
+theme.fg3 = "#665c54"
 
-theme.bg_normal     = "#fbf1c7"
-theme.bg_focus      = "#ebdbb2"
-theme.bg_urgent     = theme.bg_normal
-theme.bg_minimize   = theme.bg_focus
+theme.bg_normal     = theme.bg
+theme.bg_focus      = theme.aqua
+theme.bg_urgent     = theme.orange
+theme.bg_minimize   = theme.gray
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#3c3836"
-theme.fg_focus      = theme.fg_normal
-theme.fg_urgent     = "#8f3f71"
+theme.fg_normal     = theme.fg
+theme.fg_focus      = theme.bg
+theme.fg_urgent     = theme.bg
 theme.fg_minimize   = theme.fg_normal
 
-theme.useless_gap   = 4
-theme.border_width  = 2
-theme.border_normal = theme.bg_focus
-theme.border_focus  = "#b16286"
+theme.border_normal = theme.bg2
+theme.border_focus  = theme.aqua
+theme.border_urgent  = theme.orange
 theme.border_marked = "#cc241d"
+
+theme.useless_gap   = 3
+theme.border_width  = 2
 
 -- There are other variable sets
 -- overriding the default one when
@@ -48,7 +65,14 @@ theme.border_marked = "#cc241d"
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
 -- mouse_finder_[color|timeout|animate_timeout|radius|factor]
 -- Example:
---theme.taglist_bg_focus = "#ff0000"
+-- theme.taglist_bg_focus = "#ff0000"
+theme.taglist_fg_normal = theme.fg
+theme.taglist_fg_focus = theme.bg
+theme.taglist_fg_urgent = theme.bg
+
+theme.taglist_bg_focus = theme.aqua
+theme.taglist_bg_occupied = theme.bg1
+theme.taglist_bg_urgent = theme.orange
 
 -- Display the taglist squares
 theme.taglist_squares_sel   = theme.wd .. "taglist/squaref.png"
@@ -60,41 +84,7 @@ theme.taglist_squares_unsel = theme.wd .. "taglist/square.png"
 theme.menu_submenu_icon = theme.wd .. "submenu.png"
 theme.menu_height = 22
 theme.menu_width  = 160
-theme.wibar_height = 20
-
--- You can add as many variables as
--- you wish and access them by using
--- beautiful.variable in your rc.lua
---theme.bg_widget = "#cc0000"
-
--- Define the image to load
-theme.titlebar_close_button_normal = theme.wd .. "titlebar/normal.png"
-theme.titlebar_close_button_focus = theme.wd .. "titlebar/close.png"
-
-theme.titlebar_minimize_button_normal = theme.wd .. "titlebar/normal.png"
-theme.titlebar_minimize_button_focus = theme.wd .. "titlebar/minimize.png"
-
-theme.titlebar_ontop_button_normal_inactive = theme.wd .. "titlebar/normal.png"
-theme.titlebar_ontop_button_focus_inactive = theme.wd .. "titlebar/ontop_inactive.png"
-theme.titlebar_ontop_button_normal_active = theme.wd .. "titlebar/normal.png"
-theme.titlebar_ontop_button_focus_active = theme.wd .. "titlebar/ontop_active.png"
-
-theme.titlebar_sticky_button_normal_inactive = theme.wd .. "titlebar/normal.png"
-theme.titlebar_sticky_button_focus_inactive = theme.wd .. "titlebar/sticky_inactive.png"
-theme.titlebar_sticky_button_normal_active = theme.wd .. "titlebar/normal.png"
-theme.titlebar_sticky_button_focus_active = theme.wd .. "titlebar/sticky_active.png"
-
-theme.titlebar_floating_button_normal_inactive = theme.wd .. "titlebar/normal.png"
-theme.titlebar_floating_button_focus_inactive = theme.wd .. "titlebar/floating_inactive.png"
-theme.titlebar_floating_button_normal_active = theme.wd .. "titlebar/normal.png"
-theme.titlebar_floating_button_focus_active = theme.wd .. "titlebar/floating_active.png"
-
-theme.titlebar_maximized_button_normal_inactive = theme.wd .. "titlebar/normal.png"
-theme.titlebar_maximized_button_focus_inactive = theme.wd .. "titlebar/maximized_inactive.png"
-theme.titlebar_maximized_button_normal_active = theme.wd .. "titlebar/normal.png"
-theme.titlebar_maximized_button_focus_active = theme.wd .. "titlebar/maximized_active.png"
-
---theme.wallpaper = theme.wd .. "background.png"
+theme.wibar_height = 22
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = theme.awesome_wd .. "layouts/fairh.png"

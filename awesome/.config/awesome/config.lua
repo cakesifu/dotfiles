@@ -7,24 +7,24 @@ local function file_exists(name)
    if f ~= nil then io.close(f) return true else return false end
 end
 
-local config = {}
+local config_data = {}
 
 local function load_file(file)
-  if file_exists(file .. ".lua") then
-    local data = require(file)
+  if file_exists(config_folder .. file .. ".lua") then
+    local data = require("config/" .. file)
     for k, v in pairs(data) do
-      config[k] = v
+      config_data[k] = v
     end
   end
 end
 
-load_file(config_folder .. "default")
-load_file(config_folder .. "default.local")
+load_file("default")
+load_file("default.local")
 
 if os.getenv("AWESOME_CONFIG_FILE") then
   local config_file = os.getenv("AWESOME_CONFIG_FILE")
-  load_file(config_folder .. config_file)
-  load_file(config_folder .. config_file .. ".local")
+  load_file(config_file)
+  load_file(config_file .. ".local")
 end
 
-return config
+return config_data
