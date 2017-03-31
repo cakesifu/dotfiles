@@ -19,7 +19,7 @@ local awful = require("awful")
 local theme = {}
 -- Working directory (where you place this theme)
 theme.wd = awful.util.get_configuration_dir() .. "themes/gruvbox/"
-theme.awesome_wd = "/usr/share/awesome/themes/default/"
+theme.awesome_wd = "/usr/share/awesome/themes/zenburn/"
 
 theme.font          = "Monospaced 8"
 theme.red = "#cc241d"
@@ -28,28 +28,28 @@ theme.yellow = "#d79921"
 theme.blue = "#458588"
 theme.purple = "#b16286"
 theme.aqua = "#689d6a"
-theme.gray = "#7c6f64"
+theme.gray = "#928374"
 theme.orange = "#d65d0e"
-theme.bg = "#fbf1c7"
-theme.bg0 = "#f9f5d7"
-theme.bg1 = "#ebdbb2"
-theme.bg2 = "#d5c4a1"
-theme.fg = "#3c3836"
-theme.fg3 = "#665c54"
+theme.bg = "#282828"
+theme.bg0 = "#1d2021"
+theme.bg1 = "#3c3836"
+theme.bg2 = "#504945"
+theme.fg = "#ebdbb2"
+theme.fg3 = "#bdae93"
 
 theme.bg_normal     = theme.bg
-theme.bg_focus      = theme.aqua
+theme.bg_focus      = theme.blue
 theme.bg_urgent     = theme.orange
 theme.bg_minimize   = theme.gray
-theme.bg_systray    = theme.bg_normal
+theme.bg_systray    = theme.bg
 
 theme.fg_normal     = theme.fg
-theme.fg_focus      = theme.bg
-theme.fg_urgent     = theme.bg
-theme.fg_minimize   = theme.fg_normal
+theme.fg_focus      = theme.fg
+theme.fg_urgent     = theme.fg
+theme.fg_minimize   = theme.fg
 
 theme.border_normal = theme.bg2
-theme.border_focus  = theme.aqua
+theme.border_focus  = theme.blue
 theme.border_urgent  = theme.orange
 theme.border_marked = "#cc241d"
 
@@ -67,16 +67,19 @@ theme.border_width  = 2
 -- Example:
 -- theme.taglist_bg_focus = "#ff0000"
 theme.taglist_fg_normal = theme.fg
-theme.taglist_fg_focus = theme.bg
-theme.taglist_fg_urgent = theme.bg
+theme.taglist_fg_focus = theme.fg
+theme.taglist_fg_urgent = theme.fg
 
-theme.taglist_bg_focus = theme.aqua
+theme.taglist_bg_focus = theme.blue
 theme.taglist_bg_occupied = theme.bg1
 theme.taglist_bg_urgent = theme.orange
 
+theme.taglist_shape_border_width = 1
+theme.taglist_shape_border_color = theme.bg0
+
 -- Display the taglist squares
-theme.taglist_squares_sel   = theme.wd .. "taglist/squaref.png"
-theme.taglist_squares_unsel = theme.wd .. "taglist/square.png"
+theme.taglist_squares_sel   = theme.awesome_wd .. "taglist/squarefz.png"
+theme.taglist_squares_unsel = theme.awesome_wd .. "taglist/squarez.png"
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
@@ -116,5 +119,18 @@ theme.arrow3 = theme.wd .. "arrows/3.png"
 theme.arrow4 = theme.wd .. "arrows/4.png"
 theme.arrow5 = theme.wd .. "arrows/5.png"
 theme.arrow6 = theme.wd .. "arrows/6.png"
+
+local walls = {
+  theme.wd .. "wall-01-physics.jpg",
+  theme.wd .. "wall-02-trooper.jpg",
+  theme.wd .. "wall-03-ps3.jpg",
+  theme.wd .. "wall-04-vader.jpg"
+}
+theme.default_bg = theme.bg0
+
+math.randomseed(os.clock()*100000000000)
+theme.wallpaper = function(s)
+  return walls[math.random(1, #walls)]
+end
 
 return theme
