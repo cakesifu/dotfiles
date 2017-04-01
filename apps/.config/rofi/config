@@ -1,10 +1,3 @@
-
-rofi.color-enabled: true
-rofi.color-window: #073642, #002b36, #859900
-rofi.color-normal: #073642, #93a1a1, #073642, #586e75, #eee8d5
-rofi.color-active: #073642, #268bd2, #073642, #268bd2, #fdf6e3
-rofi.color-urgent: #073642, #dc322f, #073642, #dc322f, #fdf6e3
-
 rofi.line-margin: 7
 rofi.separator-style: solid
 rofi.bw: 3
@@ -13,3 +6,10 @@ rofi.padding: 10
 rofi.scrollbar-width: 13
 rofi.columns: 3
 rofi.width: 50
+
+rofi.color-enabled: true
+rofi.color-window: #282828, #458588, #458588
+!                  bg       fg       bgalt    hlbg     hlfg
+rofi.color-normal: #282828, #ebdbb2, #282828, #458588, #ebdbb2
+rofi.color-active: #d79921, #282828, #d79921, #fabd2f, #282828
+rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828

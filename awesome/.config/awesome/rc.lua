@@ -139,7 +139,12 @@ screen.connect_signal("property::geometry", set_wallpaper)
 awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    local l = awful.layout.suit;
+
+    awful.tag(
+      { "1-sys", "2-www", "3-code", "4-code", "5-term", "6-term",  "7-ssh", "8-misc", "9-misc"}, s,
+      {  l.tile,  l.max,   l.tile,   l.tile,   l.tile,   l.tile,    l.tile,  l.tile,   l.floating}
+    )
 
     s.mypromptbox = awful.widget.prompt()
     s.mylayoutbox = awful.widget.layoutbox(s)
@@ -243,9 +248,7 @@ globalkeys = awful.util.table.join(
               end,
               {description = "restore minimized", group = "client"}),
 
-    -- Prompt
-    -- TODO use rofi here
-    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
+    awful.key({ modkey },            "r",  function() awful.util.spawn(config.runner) end,
               {description = "run prompt", group = "launcher"})
 )
 

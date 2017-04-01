@@ -45,7 +45,7 @@ alias ll='ls -alh'
 
 GIT=''
 RVM=''
-red='\[\e[0;30m\]'
+red='\[\e[1;31m\]'
 green='\[\e[1;32m\]'
 yellow='\[\e[1;33m\]'
 blue='\[\e[1;34m\]'
@@ -68,8 +68,15 @@ fi
 # Uncomment below to enable showing ruby version
 #command -v rvm-prompt > /dev/null 2>&1 &&  RVM=" \[\e[1;33m\](\$(rvm-prompt i v g))\[\e[m\]"
 
-PS1="${green}\u\$nocolor @ ${yellow}\h ${blue}\w $nocolor $GIT$RVM"
-PS1+="\r\n\[\e[0;30m\]\!$nocolor (\t) ${green}\$ $nocolor"
+if [[ $EUID -ne 0 ]]; then
+  # user
+  PS1="${green}\u\$nocolor @ ${yellow}\h ${blue}\w $nocolor $GIT$RVM"
+  PS1+="\r\n\[\e[0;30m\]\!$nocolor (\t) ${green}\$ $nocolor"
+else
+  # root
+  PS1="${red}\u\$nocolor @ ${yellow}\h ${blue}\w $nocolor $GIT$RVM"
+  PS1+="\r\n\[\e[0;30m\]\!$nocolor (\t) ${red}\$ $nocolor"
+fi
 
 unset GIT RVM red green yelelow blue nocolor
 
