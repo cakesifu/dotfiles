@@ -39,10 +39,7 @@ end
 
 beautiful.init(awful.util.get_configuration_dir() .. "themes/gruvbox/theme.lua")
 
--- This is used later as the default terminal and editor to run.
 terminal = config.terminal
-editor = config.editor
-editor_cmd = config.editor_cmd
 modkey = config.modkey
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
