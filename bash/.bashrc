@@ -6,3 +6,4 @@ if [ -r /etc/bash.bashrc ]; then
 fi
 
 . $HOME/.shellrc.load
+

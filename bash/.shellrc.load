@@ -1,3 +1,5 @@
+# vi:syntax=sh
+
 WORKON_HOME="$HOME/pyenv"
 PATH=$HOME/bin:$PATH
 
@@ -19,8 +21,6 @@ export WORKON_HOME
 # load nvm if available
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-[ -z "$PS1" ] && return
 
 # load python virtualenv wrapper if available
 hash virtualenvwrapper_lazy.sh 2>/dev/null && source "$(which virtualenvwrapper_lazy.sh)"
