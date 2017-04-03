@@ -133,6 +133,7 @@ end
 
 screen.connect_signal("property::geometry", set_wallpaper)
 
+local first = awful.screen.getbycoord(0, 0)
 awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
@@ -162,12 +163,25 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist,
         {
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
+            s == first and wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
         },
     }
 end)
+local spacer = awful.wibar({
+  position="bottom",
+  screen=first,
+  width=100,
+  height=20,
+  bg="#ffffff:0",
+  align="right",
+  struts={bottom=20}
+})
+spacer:setup {
+  layout=wibox.layout.align.horizontal,
+  wibox.widget.systray()
+}
 
 
 globalkeys = awful.util.table.join(
