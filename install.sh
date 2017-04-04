@@ -6,12 +6,13 @@ ROOT_DIR=${ROOT_DIR:='/root'}
 SYS_DIR=${ROOT_DIR:='/etc'}
 
 PACKAGES_CONSOLE=(tmux openssh ack htop tree make bash-completion neovim
-                  git networkmanager curl python)
+                  git networkmanager curl python python-neovim)
 PACKAGES_DESKTOP=(rofi awesome chromium thunar volumeicon lxappearance-gtk3
                   pavucontrol
                   gnome-themes-standard arandr xsel
                   conky lxdm slock redshift cbatticon
-                  ttf-bitstream-vera ttf-dejavu adobe-source-code-pro-fonts
+                  ttf-bitstream-vera ttf-dejavu adobe-source-code-pro-fonts ttf-hack
+                  ttf-roboto ttf-freefont ttf-droid
                   gitg)
 
 debug() {

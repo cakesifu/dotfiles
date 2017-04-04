@@ -163,25 +163,26 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist,
         {
             layout = wibox.layout.fixed.horizontal,
-            s == first and wibox.widget.systray(),
+            wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
         },
     }
 end)
+
+-- bottom spacer for conky
 local spacer = awful.wibar({
   position="bottom",
   screen=first,
-  width=100,
-  height=20,
-  bg="#ffffff:0",
-  align="right",
-  struts={bottom=20}
+  width=30,
+  height=15,
+  bg="#ffffff00",
+  x=1900,
+  align="bottom_right",
+  struts={bottom=15}
 })
-spacer:setup {
-  layout=wibox.layout.align.horizontal,
-  wibox.widget.systray()
-}
+spacer:setup { layout=wibox.layout.align.horizontal }
+spacer:geometry { x=1900 }
 
 
 globalkeys = awful.util.table.join(
