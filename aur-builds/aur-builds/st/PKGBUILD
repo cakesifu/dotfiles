@@ -19,26 +19,25 @@ source=(http://dl.suckless.org/st/$appname-$pkgver.tar.gz
         http://st.suckless.org/patches/st-no_bold_colors-20160727-308bfbf.diff
         http://st.suckless.org/patches/st-vertcenter-20160819-023225e.diff
         st-gruvbox-light.own.diff
-        st-font.own.diff)
+        st-custom.own.diff)
 
 
 sha256sums=('f7870d906ccc988926eef2cc98950a99cc78725b685e934c422c03c1234e6000'
             '2e8cdbeaaa79ed067ffcfdcf4c5f09fb5c8c984906cde97226d4dd219dda39dc'
             'f6f8c5b61bbae220edd8019f52962e06dd01a25478e869e9fbc8d79f5a928730'
-            'e3290f97d95b34c4cd20e0a3a9e3b7f78fa2c5eaf530baab9278f229975a4821'
-            'a64e8c22b8f79c85523c4b1792f593de2ec712d477be82488401771cee497acd')
+            '65efe668e709aef73f05038b6d9410a416d9265ff493b41f9729b7a23f3ab57e'
+            '17fcf1cf54182ff511007541db07ac6871081a76bde2824a44b49ddd57bc5e70')
 
 build() {
   cd "$srcdir/$appname-$pkgver"
   patch -i "$srcdir/st-no_bold_colors-20160727-308bfbf.diff"
   patch -i "$srcdir/st-vertcenter-20160819-023225e.diff"
-  patch -i "$srcdir/st-gruvbox-light.own.diff"
-  patch -i "$srcdir/st-font.own.diff"
 
   cp config.def.h config.h
 
-  sed -i 's/Liberation Mono:pixelsize=12:antialias=true:autohint=true/Inconsolata:pixelsize=14:antialias=true:autohint=true/' config.h
-  sed -i 's/chscale = 1.0/chscale = 1.2/' config.h
+  patch -i "$srcdir/st-gruvbox-light.own.diff"
+  patch -i "$srcdir/st-custom.own.diff" -d "$srcdir/$appname-$pkgver"
+
   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }
 
