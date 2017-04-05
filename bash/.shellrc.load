@@ -11,7 +11,7 @@ if [ -d /usr/local/heroku/bin ]; then
   PATH="$PATH:/usr/local/heroku/bin"
 fi
 
-export EDITOR=vim
+export EDITOR=nvim
 export PATH
 export WORKON_HOME
 
