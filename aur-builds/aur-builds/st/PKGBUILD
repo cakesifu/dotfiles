@@ -18,19 +18,22 @@ url="http://st.suckless.org"
 source=(http://dl.suckless.org/st/$appname-$pkgver.tar.gz
         http://st.suckless.org/patches/st-no_bold_colors-20160727-308bfbf.diff
         http://st.suckless.org/patches/st-vertcenter-20160819-023225e.diff
-        st-gruvbox-light.own.diff)
+        st-gruvbox-light.own.diff
+        st-font.own.diff)
 
 
 sha256sums=('f7870d906ccc988926eef2cc98950a99cc78725b685e934c422c03c1234e6000'
             '2e8cdbeaaa79ed067ffcfdcf4c5f09fb5c8c984906cde97226d4dd219dda39dc'
             'f6f8c5b61bbae220edd8019f52962e06dd01a25478e869e9fbc8d79f5a928730'
-            '9ff56879e9977c23c802fb9254a997af01876d6b9d8267290f72b20500fedb18')
+            'e3290f97d95b34c4cd20e0a3a9e3b7f78fa2c5eaf530baab9278f229975a4821'
+            'a64e8c22b8f79c85523c4b1792f593de2ec712d477be82488401771cee497acd')
 
 build() {
   cd "$srcdir/$appname-$pkgver"
   patch -i "$srcdir/st-no_bold_colors-20160727-308bfbf.diff"
   patch -i "$srcdir/st-vertcenter-20160819-023225e.diff"
   patch -i "$srcdir/st-gruvbox-light.own.diff"
+  patch -i "$srcdir/st-font.own.diff"
 
   cp config.def.h config.h
 
