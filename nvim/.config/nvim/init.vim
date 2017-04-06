@@ -5,7 +5,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'iCyMind/NeoSolarized'
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -87,7 +87,7 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
-let g:airline_theme='solarized'
+let g:airline_theme='gruvbox'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
@@ -120,7 +120,12 @@ autocmd BufEnter *.py set sw=4 ts=4
 
 set background=light
 set termguicolors
-colorscheme NeoSolarized
+colorscheme gruvbox
+
+" gruvbox
+" -----------------------------------------------------------------------------"
+let g:gruvbox_improved_strings = 1
+let g:gruvbox_italicize_comments = 1
 
 
 " NERDTree
