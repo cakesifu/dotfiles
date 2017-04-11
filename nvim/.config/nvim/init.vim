@@ -23,6 +23,9 @@ Plug 'gcmt/taboo.vim'
 Plug 'SirVer/ultisnips'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'leafgarland/typescript-vim'
+
 
 " surround
 " buffergator
@@ -110,7 +113,7 @@ let g:NERDTrimTrailingWhitespace = 1
 
 set completeopt=longest,menuone
 set wildignore=*.egg-info,*.pyc,node_modules,.git,.tern*
-set list listchars=trail:·,extends:>,precedes:<
+set list listchars=tab:›\ ,trail:·,extends:>,precedes:<
 set noswapfile
 set number nowrap cursorline incsearch ignorecase smartcase
 set expandtab autoindent smarttab
