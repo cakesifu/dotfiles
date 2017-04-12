@@ -25,6 +25,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'wesQ3/vim-windowswap'
 
 
 " surround
