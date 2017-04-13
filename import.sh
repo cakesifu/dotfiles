@@ -1,5 +1,14 @@
 #!/bin/bash
 
+help_message() {
+  echo "Usage: import.sh <target file> <package>"
+}
+
+if [ $# -lt 2 ]; then
+  help_message
+  exit 1
+fi
+
 TARGET=$1
 PACKAGE=${2:='misc'}
 PACKAGE_DIR="${HOME}/dotfiles/${PACKAGE}"
@@ -10,4 +19,4 @@ cp $TARGET $PACKAGE_DIR
 rm -rf $TARGET
 
 cd $HOME/dotfiles
-stow -t $HOME $PACKAGE
+stow -v -t $HOME $PACKAGE
