@@ -165,5 +165,3 @@ nmap <leader>hs :set hlsearch! hlsearch?<CR>
 
 
 let g:UltiSnipsSnippetDirectories=["custom-snippets"]
-
-

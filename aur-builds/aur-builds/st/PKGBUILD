@@ -25,7 +25,7 @@ source=(http://dl.suckless.org/st/$appname-$pkgver.tar.gz
 sha256sums=('f7870d906ccc988926eef2cc98950a99cc78725b685e934c422c03c1234e6000'
             '2e8cdbeaaa79ed067ffcfdcf4c5f09fb5c8c984906cde97226d4dd219dda39dc'
             'f6f8c5b61bbae220edd8019f52962e06dd01a25478e869e9fbc8d79f5a928730'
-            '65efe668e709aef73f05038b6d9410a416d9265ff493b41f9729b7a23f3ab57e'
+            '65e585dc248f364fec3542884cb71e28f96b47328410899d8e89df7cc6e17a80'
             '17fcf1cf54182ff511007541db07ac6871081a76bde2824a44b49ddd57bc5e70')
 
 build() {
