@@ -26,6 +26,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'wesQ3/vim-windowswap'
+Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 
 " surround
@@ -103,10 +105,12 @@ let g:airline_section_y=''
 
 " Syntastic -------------------------------------------------------------"
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
 
 let g:NERDSpaceDelims = 1
 let g:NERDRemoveExtraSpaces = 1
@@ -165,3 +169,8 @@ nmap <leader>hs :set hlsearch! hlsearch?<CR>
 
 
 let g:UltiSnipsSnippetDirectories=["custom-snippets"]
+
+" typescript
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+
