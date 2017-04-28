@@ -28,6 +28,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'ap/vim-css-color'
 
 
 " surround
@@ -42,13 +43,14 @@ call plug#end()
 
 " supertab
 autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+autocmd FileType typescript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Deoplete --------------------------------------------------------------"
 
 let g:deoplete#enable_at_startup = 1
  autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-let g:deoplete#auto_complete_delay = 0
+let g:deoplete#auto_complete_delay = 100
 
 inoremap <silent><expr> <TAB>
 \ pumvisible() ? "\<C-n>" :
@@ -102,6 +104,8 @@ let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#branch#format = 2
 let g:airline_section_y=''
 
+
+let g:tsuquyomi_disable_quickfix = 1
 
 " Syntastic -------------------------------------------------------------"
 let g:syntastic_javascript_checkers = ['eslint']
@@ -167,6 +171,8 @@ map! <F1> <del>
 " toggle hlsearch with \hs
 nmap <leader>hs :set hlsearch! hlsearch?<CR>
 
+" search selected with //
+vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
 
 let g:UltiSnipsSnippetDirectories=["custom-snippets"]
 

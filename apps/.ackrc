@@ -19,3 +19,7 @@
 --type-set=jade=.jade
 --type-set=feature=.feature
 --type-set=json=.json
+
+# oodrive
+--ignore-dir=demo
+--ignore-dir=release
