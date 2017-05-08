@@ -197,7 +197,7 @@ globalkeys = awful.util.table.join(
               {description = "focus the previous screen", group = "screen"}),
 
     awful.key({ modkey,           }, "Escape", function() awful.util.spawn(config.locker) end,
-              {description = "go back", group = "global"}),
+              {description = "lock screen", group = "global"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
     awful.key({ modkey,           }, "Tab",
@@ -207,7 +207,7 @@ globalkeys = awful.util.table.join(
                 client.focus:raise()
             end
         end,
-        {description = "lock screen", group = "client"}),
+        {description = "focus previous", group = "client"}),
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
@@ -247,7 +247,10 @@ globalkeys = awful.util.table.join(
               {description = "restore minimized", group = "client"}),
 
     awful.key({ modkey },            "r",  function() awful.util.spawn(config.runner) end,
-              {description = "run prompt", group = "launcher"})
+              {description = "run prompt", group = "launcher"}),
+
+    awful.key({ modkey, "Shift" }, "w", function() set_wallpaper(awful.screen.index) end,
+              { description = "change wallpaper on crt screen", group = "screen" })
 )
 
 clientkeys = awful.util.table.join(

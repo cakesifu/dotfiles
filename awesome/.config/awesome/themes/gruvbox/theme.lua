@@ -105,14 +105,21 @@ theme.arrow5 = theme.wd .. "arrows/5.png"
 theme.arrow6 = theme.wd .. "arrows/6.png"
 
 local walls = {
-  theme.wd .. "wall-01-physics.jpg",
-  theme.wd .. "wall-02-trooper.jpg",
-  theme.wd .. "wall-03-ps3.jpg",
-  theme.wd .. "wall-04-vader.jpg"
+  -- theme.wd .. "wall-01-physics.jpg",
+  -- theme.wd .. "wall-02-trooper.jpg",
+  -- theme.wd .. "wall-03-ps3.jpg",
+  -- theme.wd .. "wall-04-vader.jpg",
+
+  theme.wd .. "wall-05-dark-knight.jpg",
+  theme.wd .. "wall-06-car.png",
+  theme.wd .. "wall-07-madmax.jpg",
+  theme.wd .. "wall-08-xwing.png",
+  theme.wd .. "wall-09-millenium-falcon.jpg",
+  theme.wd .. "wall-10-trooper-dual-exposure.jpg"
 }
 theme.default_bg = theme.bg0
 
-math.randomseed(os.clock()*100000000000)
+math.randomseed(os.clock() * 100000000000)
 theme.wallpaper = function(s)
   return walls[math.random(1, #walls)]
 end

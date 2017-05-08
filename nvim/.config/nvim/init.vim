@@ -13,7 +13,6 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'majutsushi/tagbar'
 Plug 'ervandew/supertab'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } " requires npm install in dir
@@ -127,6 +126,8 @@ set noswapfile
 set number nowrap cursorline incsearch ignorecase smartcase
 set expandtab autoindent smarttab
 set synmaxcol=200
+autocmd BufEnter * set colorcolumn=100
+autocmd BufEnter *.[jt]sx? set colorcolumn=120
 autocmd BufEnter * set sw=2 ts=2
 autocmd BufEnter *.py set sw=4 ts=4
 
@@ -161,11 +162,11 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
     \ }
 
-map <leader>rt :TagbarOpenAutoClose<CR>
 
 " fix delete key for sta  dsf
 map <F1> <del>
 map! <F1> <del>
+
 
 
 " toggle hlsearch with \hs
