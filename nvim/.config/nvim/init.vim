@@ -28,6 +28,10 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'ap/vim-css-color'
+Plug 'wavded/vim-stylus'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-obsession'
+Plug 'jeetsukumaran/vim-buffergator'
 
 
 " surround
@@ -100,8 +104,11 @@ let g:airline_right_sep=''
 
 
 let g:airline#extensions#hunks#enabled = 0
-let g:airline#extensions#branch#format = 2
+let g:airline#extensions#branch#format = 0
 let g:airline_section_y=''
+let g:airline_section_z='%l/%L,%c'
+let g:airline_section_b='%f'
+let g:airline_section_c='%t %m%r'
 
 
 let g:tsuquyomi_disable_quickfix = 1
@@ -134,6 +141,7 @@ autocmd BufEnter *.py set sw=4 ts=4
 set background=light
 set termguicolors
 colorscheme gruvbox
+set mouse=a
 
 " gruvbox
 " -----------------------------------------------------------------------------"
@@ -181,3 +189,5 @@ let g:UltiSnipsSnippetDirectories=["custom-snippets"]
 let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
 
+" session
+set sessionoptions+=tabpages,globals

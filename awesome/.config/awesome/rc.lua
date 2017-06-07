@@ -127,7 +127,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     awful.tag(
       { "1-sys", "2-www", "3-code", "4-code", "5-term", "6-term",  "7-ssh", "8-misc", "9-misc"}, s,
-      {  l.tile,  l.max,   l.tile,   l.tile,   l.tile,   l.tile,    l.tile,  l.tile,   l.floating}
+      {  l.tile,  l.max,   l.tile,   l.tile,   l.tile,   l.tile,    l.tile,  l.floating,   l.tile}
     )
 
     s.mypromptbox = awful.widget.prompt()
@@ -356,6 +356,7 @@ clientbuttons = awful.util.table.join(
 
 root.keys(globalkeys)
 
+-- window rules
 awful.rules.rules = {
     { rule = { },
       properties = { border_width = beautiful.border_width,
@@ -365,7 +366,7 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
-                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
+                     placement = awful.placement.no_overlap + awful.placement.no_offscreen
      }
     },
 
@@ -383,7 +384,10 @@ awful.rules.rules = {
           "Wpa_gui",
           "pinentry",
           "veromix",
-          "xtightvncviewer"},
+          "xtightvncviewer",
+          "pavucontrol",
+          "galculator",
+        },
 
         name = {
           "Event Tester",  -- xev.
