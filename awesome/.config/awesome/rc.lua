@@ -386,17 +386,21 @@ awful.rules.rules = {
           "veromix",
           "xtightvncviewer",
           "pavucontrol",
-          "galculator",
+          "galculator"
         },
 
         name = {
           "Event Tester",  -- xev.
+          "galculator",
+          "Volume Control"
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
-      }, properties = { floating = true }},
+      },
+      properties = { floating = true }
+    }
 }
 
 client.connect_signal("manage", function (c)

@@ -24,6 +24,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'wesQ3/vim-windowswap'
 Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -127,7 +128,7 @@ let g:NERDRemoveExtraSpaces = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 set completeopt=longest,menuone
-set wildignore=*.egg-info,*.pyc,node_modules,.git,.tern*
+set wildignore=*.egg-info,*.pyc,node_modules,.git,.tern*,Session.vim
 set list listchars=tab:›\ ,trail:·,extends:>,precedes:<
 set noswapfile
 set number nowrap cursorline incsearch ignorecase smartcase
@@ -137,6 +138,7 @@ autocmd BufEnter * set colorcolumn=100
 autocmd BufEnter *.[jt]sx? set colorcolumn=120
 autocmd BufEnter * set sw=2 ts=2
 autocmd BufEnter *.py set sw=4 ts=4
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
 
 set background=light
 set termguicolors
