@@ -370,6 +370,15 @@ awful.rules.rules = {
      }
     },
 
+    {
+      rule_any = {
+        class = { "st-256color" }
+      },
+      properties = {
+        size_hints_honor = false
+      }
+    },
+
     { rule_any = {
         instance = {
           "DTA",  -- Firefox addon DownThemAll.
