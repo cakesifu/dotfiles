@@ -6,10 +6,10 @@ Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
@@ -24,7 +24,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'ianks/vim-tsx'
 Plug 'wesQ3/vim-windowswap'
 Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -33,6 +33,7 @@ Plug 'wavded/vim-stylus'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-obsession'
 Plug 'jeetsukumaran/vim-buffergator'
+
 
 
 " surround
@@ -100,6 +101,7 @@ let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_theme='gruvbox'
+let g:airline_solarized_bg='light'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
@@ -138,17 +140,9 @@ autocmd BufEnter * set colorcolumn=100
 autocmd BufEnter *.[jt]sx? set colorcolumn=120
 autocmd BufEnter * set sw=2 ts=2
 autocmd BufEnter *.py set sw=4 ts=4
-autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
 
-set background=light
-set termguicolors
-colorscheme gruvbox
 set mouse=a
 
-" gruvbox
-" -----------------------------------------------------------------------------"
-let g:gruvbox_improved_strings = 1
-let g:gruvbox_italicize_comments = 1
 
 
 " NERDTree
@@ -188,8 +182,27 @@ vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
 let g:UltiSnipsSnippetDirectories=["custom-snippets"]
 
 " typescript
+" -----------------------------------------------------------------------------"
 let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
 
+" colorscheme
+" -----------------------------------------------------------------------------"
+set background=light
+set termguicolors
+colorscheme gruvbox
+
+let g:gruvbox_improved_strings = 1
+let g:gruvbox_italicize_comments = 1
+
 " session
+" -----------------------------------------------------------------------------"
 set sessionoptions+=tabpages,globals
+
+" show syntax highlight group for word under cursor
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
