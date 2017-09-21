@@ -122,7 +122,7 @@ let g:NERDRemoveExtraSpaces = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 set completeopt=longest,menuone
-set wildignore=*.egg-info,*.pyc,node_modules,.git,.tern*,Session.vim
+set wildignore=*.egg-info,*.pyc,node_modules,.git,.tern*,Session.vim,build
 set list listchars=tab:›\ ,trail:·,extends:>,precedes:<
 set noswapfile
 set number nowrap cursorline incsearch ignorecase smartcase
@@ -140,6 +140,7 @@ set mouse=a
 " NERDTree
 " -----------------------------------------------------------------------------"
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
+let NERDTreeRespectWildIgnore=1
 map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 map <leader>N :NERDTreeFind<CR>
 
