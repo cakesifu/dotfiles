@@ -20,6 +20,9 @@
 --type-set=feature=.feature
 --type-set=json=.json
 
+--type-add=js=.jsx
+--type-add=ts=js
+--type-add=ts=.tsx,.ts
 # oodrive
 --ignore-dir=demo
 --ignore-dir=release

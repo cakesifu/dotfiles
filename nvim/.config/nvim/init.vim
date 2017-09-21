@@ -18,7 +18,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } " requires npm install in dir
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'gcmt/taboo.vim'
+" Plug 'gcmt/taboo.vim'
+Plug 'webdevel/tabulous'
 Plug 'SirVer/ultisnips'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
@@ -34,16 +35,6 @@ Plug 'tpope/vim-haml'
 Plug 'tpope/vim-obsession'
 Plug 'jeetsukumaran/vim-buffergator'
 
-
-
-" surround
-" buffergator
-" repeat
-" gundo
-" ack
-" rainbow paranthesis
-" css color
-" jsx, jade, less
 call plug#end()
 
 " supertab
@@ -91,6 +82,7 @@ let g:taboo_tab_format = "%m "
 let g:taboo_renamed_tab_format = "%l%m "
 let g:taboo_modified_tab_flag = " +"
 let g:taboo_tabline = 0
+let tabulousLabelModifiedStr = '+ '
 
 
 " Airline ----------------------------------------------------------------"
@@ -100,8 +92,8 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#taboo#enabled = 1
 let g:airline_theme='gruvbox'
-let g:airline_solarized_bg='light'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
