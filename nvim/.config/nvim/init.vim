@@ -2,7 +2,7 @@ call plug#begin('~/.nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
@@ -92,7 +92,10 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#taboo#enabled = 1
+
+let g:airline#extensions#taboo#enabled = 0
+let g:airline#extensions#ale#enabled = 1
+
 let g:airline_theme='gruvbox'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -108,14 +111,27 @@ let g:airline_section_c='%t %m%r'
 
 let g:tsuquyomi_disable_quickfix = 1
 
-" Syntastic -------------------------------------------------------------"
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
+" p:ale ----------------------------------------------------------------"
+
+let g:ale_linters = {
+\   'javascript': ['eslint', 'standard', 'xo'],
+\   'typescript': ['tslint', 'tsserver', 'typecheck'],
+\}
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\   'typescript': [],
+\}
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_delay = 1000
+let g:ale_lint_on_insert_leave = 1
+let g:ale_echo_msg_format = '[%linter%:%severity%] %s'
+
+nmap <leader>f :ALEFix<CR>
+map <F8> <Plug>(ale_fix)
+
+" Others ----------------------------------------------------------------"
 
 let g:NERDSpaceDelims = 1
 let g:NERDRemoveExtraSpaces = 1
