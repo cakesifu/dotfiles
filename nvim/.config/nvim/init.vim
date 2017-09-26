@@ -18,8 +18,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } " requires npm install in dir
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
-" Plug 'gcmt/taboo.vim'
-Plug 'webdevel/tabulous'
+Plug 'gcmt/taboo.vim'
 Plug 'SirVer/ultisnips'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
@@ -82,7 +81,6 @@ let g:taboo_tab_format = "%m "
 let g:taboo_renamed_tab_format = "%l%m "
 let g:taboo_modified_tab_flag = " +"
 let g:taboo_tabline = 0
-let tabulousLabelModifiedStr = '+ '
 
 
 " Airline ----------------------------------------------------------------"
@@ -93,7 +91,7 @@ let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
 
-let g:airline#extensions#taboo#enabled = 0
+let g:airline#extensions#taboo#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
 let g:airline_theme='gruvbox'
@@ -114,7 +112,7 @@ let g:tsuquyomi_disable_quickfix = 1
 " p:ale ----------------------------------------------------------------"
 
 let g:ale_linters = {
-\   'javascript': ['eslint', 'standard', 'xo'],
+\   'javascript': ['eslint'],
 \   'typescript': ['tslint', 'tsserver', 'typecheck'],
 \}
 let g:ale_fixers = {
