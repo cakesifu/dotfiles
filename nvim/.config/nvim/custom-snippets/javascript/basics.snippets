@@ -3,28 +3,28 @@ console.log(${0});
 endsnippet
 
 
-snippet red "export function REDUCER(state, action)" b
+snippet red "redux reducer function" b
 export default function $0(state, action) {
 	$0
 }
 endsnippet
 
 
-snippet comp "export default class Component extends Component {"
-import React from "react";
+snippet comp "React component"
+import * as React from 'react';
+import PropTypes from 'prop-types';
 
-import Component from "$1";
+export default class $1 extends React.Component {
+	static propTypes = {
+		$2
+	};
 
-export default class $2 extends Component {
 	render() {
 		return (
-			<div className="$3">
+			<div>
 				$0
 			</div>
 		);
 	}
 }
-
-$2.propTypes = {
-};
 endsnippet

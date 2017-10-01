@@ -13,13 +13,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'ervandew/supertab'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } " requires npm install in dir
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'othree/jspc.vim'
 Plug 'gcmt/taboo.vim'
 Plug 'SirVer/ultisnips'
+Plug 'ervandew/supertab'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
@@ -47,13 +45,9 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " Deoplete --------------------------------------------------------------"
 
 let g:deoplete#enable_at_startup = 1
- autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 let g:deoplete#auto_complete_delay = 100
 
-inoremap <silent><expr> <TAB>
-\ pumvisible() ? "\<C-n>" :
-\ <SID>check_back_space() ? "\<TAB>" :
-\ deoplete#mappings#manual_complete()
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -61,18 +55,6 @@ function! s:check_back_space() abort
 endfunction
 
 autocmd CmdwinEnter * let b:deoplete_sources = ['buffer']
-
-let g:tern#command = ['tern']
-let g:tern#arguments = ['--persistent']
-
-" tern
-if exists('g:plugs["tern_for_vim"]')
-  let g:tern_show_argument_hints = 'on_hold'
-  let g:tern_show_signature_in_pum = '1'
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
-endif
-
-autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
 
 
 " Remove trailing whitespace ---------------------------------------------"
