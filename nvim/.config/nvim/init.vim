@@ -28,6 +28,7 @@ Plug 'wavded/vim-stylus'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-obsession'
 Plug 'jeetsukumaran/vim-buffergator'
+Plug 'mileszs/ack.vim'
 
 " Typescript
 Plug 'Quramy/tsuquyomi'
@@ -198,3 +199,10 @@ function! SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+
+" ack
+" -----------------------------------------------------------------------------"
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
