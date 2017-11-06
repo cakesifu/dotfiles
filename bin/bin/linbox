@@ -1,0 +1,5 @@
+#!/bin/env bash
+
+exec wine ~/Downloads/winbox.exe
+
+
