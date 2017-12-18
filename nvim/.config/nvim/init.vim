@@ -103,7 +103,7 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
-\   'typescript': [],
+\   'typescript': ['tslint'],
 \}
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
