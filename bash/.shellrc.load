@@ -15,9 +15,6 @@ export EDITOR=nvim
 export PATH
 export WORKON_HOME
 
-# load rvm if available
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # load nvm if available
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -33,10 +30,6 @@ hash virtualenvwrapper_lazy.sh 2>/dev/null && source "$(which virtualenvwrapper_
 # ----------------------------------------
 
 alias ls='ls --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-alias l='ls -l'
 alias ll='ls -alh'
 
 # ----------------------------------------
@@ -44,11 +37,11 @@ alias ll='ls -alh'
 # ----------------------------------------
 
 GIT=''
-RVM=''
 red='\[\e[1;31m\]'
 green='\[\e[1;32m\]'
 yellow='\[\e[1;33m\]'
 blue='\[\e[1;34m\]'
+grey='\[\e[0;90m\]'
 nocolor='\[\e[0m\]'
 
 if ! type __git_ps1 >/dev/null 2>&1; then
@@ -62,23 +55,22 @@ if type __git_ps1 >/dev/null 2>&1; then
   GIT_PS1_SHOWSTASHSTATE=true
   GIT_PS1_SHOWUNTRACKEDFILES=true
   GIT_PS1_SHOWUPSTREAM="auto"
-  GIT='\[\e[1;31m\]$(__git_ps1 " (%s)") \[\e[m\]'
+  GIT="$red$(__git_ps1 " (%s)")$nocolor"
 fi
 
 # Uncomment below to enable showing ruby version
-#command -v rvm-prompt > /dev/null 2>&1 &&  RVM=" \[\e[1;33m\](\$(rvm-prompt i v g))\[\e[m\]"
 
 if [[ $EUID -ne 0 ]]; then
   # user
-  PS1="${green}\u\$nocolor @ ${yellow}\h ${blue}\w $nocolor $GIT$RVM"
-  PS1+="\r\n\[\e[0;30m\]\!$nocolor (\t) ${green}\$ $nocolor"
+  PS1="${green}\u\$nocolor @ ${yellow}\h ${blue}\w $nocolor $GIT"
+  PS1+="\r\n$nocolor\!$nocolor (\t) ${green}\$ $nocolor"
 else
   # root
-  PS1="${red}\u\$nocolor @ ${yellow}\h ${blue}\w $nocolor $GIT$RVM"
-  PS1+="\r\n\[\e[0;30m\]\!$nocolor (\t) ${red}\$ $nocolor"
+  PS1="${red}\u\$nocolor @ ${yellow}\h ${blue}\w $nocolor $GIT"
+  PS1+="\r\n$nocolor\!$nocolor (\t) ${red}\$ $nocolor"
 fi
 
-unset GIT RVM red green yelelow blue nocolor
+unset GIT red green yelelow blue nocolor
 
 # ----------------------------------------
 #  BASH CONFIG
@@ -100,5 +92,3 @@ shopt -s checkwinsize
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
-
-
