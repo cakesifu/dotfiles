@@ -55,22 +55,22 @@ if type __git_ps1 >/dev/null 2>&1; then
   GIT_PS1_SHOWSTASHSTATE=true
   GIT_PS1_SHOWUNTRACKEDFILES=true
   GIT_PS1_SHOWUPSTREAM="auto"
-  GIT="$red$(__git_ps1 " (%s)")$nocolor"
+  GIT="$red"
+  GIT+='$(__git_ps1 " (%s)")'
+  GIT+="$nocolor"
 fi
-
-# Uncomment below to enable showing ruby version
 
 if [[ $EUID -ne 0 ]]; then
   # user
   PS1="${green}\u\$nocolor @ ${yellow}\h ${blue}\w $nocolor $GIT"
-  PS1+="\r\n$nocolor\!$nocolor (\t) ${green}\$ $nocolor"
+  PS1+="\r\n${grey}\!$nocolor (\t) ${green}\$ $nocolor"
 else
   # root
   PS1="${red}\u\$nocolor @ ${yellow}\h ${blue}\w $nocolor $GIT"
-  PS1+="\r\n$nocolor\!$nocolor (\t) ${red}\$ $nocolor"
+  PS1+="\r\n${grey}\!$nocolor (\t) ${red}\$ $nocolor"
 fi
 
-unset GIT red green yelelow blue nocolor
+unset GIT red green yellow blue nocolor grey
 
 # ----------------------------------------
 #  BASH CONFIG
@@ -92,3 +92,5 @@ shopt -s checkwinsize
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
+
+
