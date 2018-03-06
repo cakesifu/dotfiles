@@ -105,17 +105,14 @@ theme.arrow5 = theme.wd .. "arrows/5.png"
 theme.arrow6 = theme.wd .. "arrows/6.png"
 
 local walls = {
-  -- theme.wd .. "wall-01-physics.jpg",
-  -- theme.wd .. "wall-02-trooper.jpg",
-  -- theme.wd .. "wall-03-ps3.jpg",
-  -- theme.wd .. "wall-04-vader.jpg",
-
-  theme.wd .. "wall-05-dark-knight.jpg",
-  theme.wd .. "wall-06-car.png",
-  theme.wd .. "wall-07-madmax.jpg",
-  theme.wd .. "wall-08-xwing.png",
-  theme.wd .. "wall-09-millenium-falcon.jpg",
-  theme.wd .. "wall-10-trooper-dual-exposure.jpg"
+  theme.wd .. "wall_dark_01.png",
+  theme.wd .. "wall_dark_02.jpg",
+  theme.wd .. "wall_dark_03.jpg",
+  theme.wd .. "wall_dark_04.jpg",
+  theme.wd .. "wall_dark_05.png",
+  theme.wd .. "wall_dark_06.jpg",
+  theme.wd .. "wall_dark_07.jpg",
+  theme.wd .. "wall_dark_08.jpg"
 }
 theme.default_bg = theme.bg0
 

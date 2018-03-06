@@ -8,7 +8,7 @@ SYS_DIR=${ROOT_DIR:='/etc'}
 PACKAGES_CONSOLE=(tmux openssh ack htop tree make bash-completion neovim
                   git networkmanager curl python python-neovim)
 PACKAGES_DESKTOP=(rofi awesome chromium thunar volumeicon lxappearance-gtk3
-                  pavucontrol
+                  pavucontrol termite
                   gnome-themes-standard arandr xsel arc-gtk-theme arc-icon-theme
                   conky lxdm slock redshift cbatticon
                   ttf-bitstream-vera ttf-dejavu adobe-source-code-pro-fonts ttf-hack
@@ -77,6 +77,7 @@ do
       install_config "git" "$USER_DIR"
       install_config "nvim" "$USER_DIR"
       install_config "tmux" "$USER_DIR"
+      install_config "termite" "$USER_DIR"
       ;;
     config:root)
       install_config "bash" "$ROOT_DIR"
