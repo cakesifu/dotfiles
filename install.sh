@@ -10,9 +10,9 @@ PACKAGES_CONSOLE=(tmux openssh ack htop tree make bash-completion neovim
 PACKAGES_DESKTOP=(rofi awesome chromium thunar volumeicon lxappearance-gtk3
                   pavucontrol termite
                   gnome-themes-standard arandr xsel arc-gtk-theme arc-icon-theme
-                  conky lxdm slock redshift cbatticon
+                  conky lxdm slock redshift cbatticon ttf-inconsolata
                   ttf-bitstream-vera ttf-dejavu adobe-source-code-pro-fonts ttf-hack
-                  ttf-roboto ttf-freefont ttf-droid
+                  ttf-roboto ttf-freefont ttf-droid network-manager-applet python-xdg
                   gitg)
 
 debug() {
@@ -67,6 +67,7 @@ for ARG in "$@"
 do
   case $ARG in
     config:user)
+      mkdir -p "$USER_DIR/.local/fonts"
       install_config "apps" "$USER_DIR"
       install_config "aur-builds" "$USER_DIR"
       install_config "awesome" "$USER_DIR"
