@@ -94,6 +94,7 @@ theme.layout_cornerse = theme.awesome_wd .. "layouts/cornerse.png"
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
+theme.notification_icon_size = 64
 
 -- Arrows
 theme.arrow0 = theme.wd .. "arrows/0.png"
