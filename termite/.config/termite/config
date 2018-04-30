@@ -37,40 +37,30 @@ cursor_shape = "ibeam"
 
 # "off", "left" or "right"
 #scrollbar = off
-
 [colors]
-# If both of these are unset, cursor falls back to the foreground color,
-# and cursor_foreground falls back to the background color.
-cursor = #d65d0e
-cursor_foreground = #f9f5d7
+foreground = #D8DEE9
+background = #2E3440
+foreground_bold = #D8DEE9
+cursor = #D8DEE9
+cursor_foreground = #2E3440
+highlight = #4C566A
 
-foreground = #665c54
-#foreground_bold = #ffffff
-background = #fbf1c7
-
-# 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
-
-# If unset, will reverse foreground and background
-# highlight = #af3a03
-
-# Colors from color0 to color254 can be set
-color0 = #d5c4a1
-color1 = #cc241d
-color2 = #98971a
-color3 = #d79921
-color4 = #458588
-color5 = #b16286
-color6 = #689d6a
-color7 = #7c6f64
-color8 = #928377
-color9 = #9d0006
-color10 = #79740e
-color11 = #b57614
-color12 = #076678
-color13 = #8f3f71
-color14 = #427b58
-color15 = #3c3836
+color0  = #3B4252
+color1  = #BF616A
+color2  = #A3BE8C
+color3  = #EBCB8B
+color4  = #81A1C1
+color5  = #B48EAD
+color6  = #88C0D0
+color7  = #E5E9F0
+color8  = #4C566A
+color9  = #BF616A
+color10 = #A3BE8C
+color11 = #EBCB8B
+color12 = #81A1C1
+color13 = #B48EAD
+color14 = #8FBCBB
+color15 = #ECEFF4
 
 [hints]
 font = Hack 12
@@ -79,7 +69,7 @@ background = #282828
 #active_foreground = #e68080
 #active_background = #3f3f3f
 padding = 3
-border = #d79921
+border = #2E3440
 border_width = 1
 roundness = 2.0
 

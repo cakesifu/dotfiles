@@ -29,6 +29,7 @@ Plug 'tpope/vim-haml'
 Plug 'tpope/vim-obsession'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mileszs/ack.vim'
+Plug 'arcticicestudio/nord-vim'
 
 " Typescript
 Plug 'Quramy/tsuquyomi'
@@ -189,9 +190,8 @@ let g:typescript_compiler_options = ''
 
 " colorscheme
 " -----------------------------------------------------------------------------"
-set background=light
 set termguicolors
-colorscheme gruvbox
+colorscheme nord
 
 let g:gruvbox_improved_strings = 1
 let g:gruvbox_italicize_comments = 1
