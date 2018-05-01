@@ -37,7 +37,7 @@ do
 end
 -- }}}
 
-beautiful.init(awful.util.get_configuration_dir() .. "themes/gruvbox/theme.lua")
+beautiful.init(awful.util.get_configuration_dir() .. "themes/nord/theme.lua")
 
 terminal = config.terminal
 modkey = config.modkey
@@ -214,12 +214,10 @@ globalkeys = awful.util.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
-              {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
+    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.025)          end,
               {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
+    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.025)          end,
               {description = "decrease master width factor", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
@@ -260,26 +258,34 @@ clientkeys = awful.util.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "Right", function (c)
-                                                local s = awful.screen.get_next_in_direction("right")
-                                                if c then c.move_to_screen(s.index) end
-                                              end,
-              {description = "move to screen right", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "Left", function (c)
-                                                local s = awful.screen.get_next_in_direction("left")
-                                                if c then c.move_to_screen(s.index) end
-                                              end,
-              {description = "move to screen left", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "Up", function (c)
-                                                local s = awful.screen.get_next_in_direction("up")
-                                                if c then c.move_to_screen(s.index) end
-                                              end,
-              {description = "move to screen up", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "Down", function (c)
-                                                local s = awful.screen.get_next_in_direction("down")
-                                                if c then c.move_to_screen(s.index) end
-                                              end,
-              {description = "move to screen down", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "Right",
+      function (c)
+        local crts = c.screen
+        local s = crts:get_next_in_direction("right")
+        if c and s then c:move_to_screen(s.index) end
+      end,
+      {description = "move to screen right", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "Left",
+      function (c)
+        local crts = c.screen
+        local s = crts:get_next_in_direction("left")
+        if c and s then c:move_to_screen(s.index) end
+      end,
+      {description = "move to screen left", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "Up",
+      function (c)
+        local crts = c.screen
+        local s = crts:get_next_in_direction("up")
+        if c and s then c:move_to_screen(s.index) end
+      end,
+      {description = "move to screen up", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "Down",
+      function (c)
+        local crts = c.screen
+        local s = crts:get_next_in_direction("down")
+        if c and s then c:move_to_screen(s.index) end
+      end,
+      {description = "move to screen down", group = "client"}),
 
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),

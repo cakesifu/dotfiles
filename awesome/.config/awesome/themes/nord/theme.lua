@@ -2,38 +2,38 @@ local awful = require("awful")
 
 local theme = {}
 -- Working directory (where you place this theme)
-theme.wd = awful.util.get_configuration_dir() .. "themes/gruvbox/"
+theme.local_wd = awful.util.get_configuration_dir() .. "themes/nord/"
 theme.walld = awful.util.get_configuration_dir() .. "themes/_walls/"
-theme.awesome_wd = "/usr/share/awesome/themes/zenburn/"
+theme.wd = "/usr/share/awesome/themes/zenburn/"
 
-theme.font          = "Monospaced 8"
-theme.red = "#cc241d"
-theme.green = "#98971a"
-theme.yellow = "#d79921"
-theme.blue = "#458588"
-theme.purple = "#b16286"
-theme.aqua = "#689d6a"
-theme.gray = "#928374"
-theme.orange = "#d65d0e"
-theme.bg = "#282828"
-theme.bg0 = "#1d2021"
-theme.bg1 = "#3c3836"
-theme.bg2 = "#504945"
-theme.fg = "#ebdbb2"
+theme.font = "Monospaced 9"
+theme.red = "#BF616A"
+theme.green = "#A3BE8C"
+theme.yellow = "#EBCB8B"
+theme.blue = "#5E81AC"
+theme.purple = "#B48EAD"
+theme.aqua = "#88C0D0"
+theme.gray = "#D8DEE9"
+theme.orange = "#D08770"
+theme.bg = "#3B4252"
+theme.bg0 = "#2E3440"
+theme.bg1 = "#434C5E"
+theme.bg2 = "#4C566A"
+theme.fg = "#D8DEE9"
 theme.fg3 = "#bdae93"
 
 theme.bg_normal     = theme.bg
 theme.bg_focus      = theme.blue
 theme.bg_urgent     = theme.orange
-theme.bg_minimize   = theme.gray
-theme.bg_systray    = theme.bg
+theme.bg_minimize   = theme.yellow
+theme.bg_systray    = theme.bg0
 
 theme.fg_normal     = theme.fg
 theme.fg_focus      = theme.fg
 theme.fg_urgent     = theme.fg
-theme.fg_minimize   = theme.fg
+theme.fg_minimize   = theme.bg0
 
-theme.border_normal = theme.bg2
+theme.border_normal = theme.bg0
 theme.border_focus  = theme.blue
 theme.border_urgent  = theme.orange
 theme.border_marked = "#cc241d"
@@ -59,12 +59,13 @@ theme.taglist_bg_focus = theme.blue
 theme.taglist_bg_occupied = theme.bg1
 theme.taglist_bg_urgent = theme.orange
 
-theme.taglist_shape_border_width = 1
+theme.taglist_shape_border_width = 2
 theme.taglist_shape_border_color = theme.bg0
 
 -- Display the taglist squares
-theme.taglist_squares_sel   = theme.awesome_wd .. "taglist/squarefz.png"
-theme.taglist_squares_unsel = theme.awesome_wd .. "taglist/squarez.png"
+theme.taglist_squares_sel   = theme.local_wd .. "taglist/square.png"
+theme.taglist_squares_unsel = theme.local_wd .. "taglist/square.png"
+
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
@@ -75,22 +76,22 @@ theme.menu_width  = 160
 theme.wibar_height = 22
 
 -- You can use your own layout icons like this:
-theme.layout_fairh = theme.awesome_wd .. "layouts/fairh.png"
-theme.layout_fairv = theme.awesome_wd .. "layouts/fairv.png"
-theme.layout_floating  = theme.awesome_wd .. "layouts/floating.png"
-theme.layout_magnifier = theme.awesome_wd .. "layouts/magnifier.png"
-theme.layout_max = theme.awesome_wd .. "layouts/max.png"
-theme.layout_fullscreen = theme.awesome_wd .. "layouts/fullscreen.png"
-theme.layout_tilebottom = theme.awesome_wd .. "layouts/tilebottom.png"
-theme.layout_tileleft   = theme.awesome_wd .. "layouts/tileleft.png"
-theme.layout_tile = theme.awesome_wd .. "layouts/tile.png"
-theme.layout_tiletop = theme.awesome_wd .. "layouts/tiletop.png"
-theme.layout_spiral  = theme.awesome_wd .. "layouts/spiral.png"
-theme.layout_dwindle = theme.awesome_wd .. "layouts/dwindle.png"
-theme.layout_cornernw = theme.awesome_wd .. "layouts/cornernw.png"
-theme.layout_cornerne = theme.awesome_wd .. "layouts/cornerne.png"
-theme.layout_cornersw = theme.awesome_wd .. "layouts/cornersw.png"
-theme.layout_cornerse = theme.awesome_wd .. "layouts/cornerse.png"
+theme.layout_fairh = theme.wd .. "layouts/fairh.png"
+theme.layout_fairv = theme.wd .. "layouts/fairv.png"
+theme.layout_floating  = theme.wd .. "layouts/floating.png"
+theme.layout_magnifier = theme.wd .. "layouts/magnifier.png"
+theme.layout_max = theme.wd .. "layouts/max.png"
+theme.layout_fullscreen = theme.wd .. "layouts/fullscreen.png"
+theme.layout_tilebottom = theme.wd .. "layouts/tilebottom.png"
+theme.layout_tileleft   = theme.wd .. "layouts/tileleft.png"
+theme.layout_tile = theme.wd .. "layouts/tile.png"
+theme.layout_tiletop = theme.wd .. "layouts/tiletop.png"
+theme.layout_spiral  = theme.wd .. "layouts/spiral.png"
+theme.layout_dwindle = theme.wd .. "layouts/dwindle.png"
+theme.layout_cornernw = theme.wd .. "layouts/cornernw.png"
+theme.layout_cornerne = theme.wd .. "layouts/cornerne.png"
+theme.layout_cornersw = theme.wd .. "layouts/cornersw.png"
+theme.layout_cornerse = theme.wd .. "layouts/cornerse.png"
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
