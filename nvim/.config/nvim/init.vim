@@ -88,7 +88,7 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#taboo#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
-let g:airline_theme='gruvbox'
+let g:airline_theme='base16_nord'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 

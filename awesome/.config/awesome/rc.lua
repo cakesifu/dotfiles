@@ -191,10 +191,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
 
-    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
-              {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
-              {description = "focus the previous screen", group = "screen"}),
+    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_bydirection("left") end,
+              {description = "focus the screen to the left", group = "screen"}),
+    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_bydirection("right") end,
+              {description = "focus the screen to the right", group = "screen"}),
 
     awful.key({ modkey,           }, "Escape", function() awful.util.spawn(config.locker) end,
               {description = "lock screen", group = "global"}),
