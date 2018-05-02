@@ -6,7 +6,7 @@ theme.local_wd = awful.util.get_configuration_dir() .. "themes/nord/"
 theme.walld = awful.util.get_configuration_dir() .. "themes/_walls/"
 theme.wd = "/usr/share/awesome/themes/zenburn/"
 
-theme.font = "Monospaced 9"
+theme.font = "Monospaced 8"
 theme.red = "#BF616A"
 theme.green = "#A3BE8C"
 theme.yellow = "#EBCB8B"
