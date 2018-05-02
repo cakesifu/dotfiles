@@ -247,7 +247,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey },            "r",  function() awful.util.spawn(config.runner) end,
               {description = "run prompt", group = "launcher"}),
 
-    awful.key({ modkey, "Shift" }, "w", function() set_wallpaper(awful.screen.index) end,
+    awful.key({ modkey, "Shift" }, "w", function() set_wallpaper(awful.screen.focused()) end,
               { description = "change wallpaper on crt screen", group = "screen" })
 )
 
