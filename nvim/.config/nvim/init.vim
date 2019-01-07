@@ -3,8 +3,10 @@ call plug#begin('~/.nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'w0rp/ale'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-unimpaired'
@@ -29,13 +31,15 @@ Plug 'tpope/vim-haml'
 Plug 'tpope/vim-obsession'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mileszs/ack.vim'
-Plug 'arcticicestudio/nord-vim'
+Plug 'cakesifu/nord-vim'
 
 " Typescript
 Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'ianks/vim-tsx'
-Plug 'mhartington/nvim-typescript'
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+Plug 'Shougo/denite.nvim'
 
 call plug#end()
 
@@ -71,10 +75,11 @@ autocmd BufWritePre * :FixWhitespace
 
 
 " Taboo ------------------------------------------------------------------"
-let g:taboo_tab_format = "%m "
-let g:taboo_renamed_tab_format = "%l%m "
+let g:taboo_tab_format = " %N%m "
+let g:taboo_renamed_tab_format = " %N %l%m "
 let g:taboo_modified_tab_flag = " +"
-let g:taboo_tabline = 0
+let g:taboo_tabline = 1
+
 
 
 " Airline ----------------------------------------------------------------"
@@ -100,6 +105,20 @@ let g:airline_section_z='%l/%L,%c'
 let g:airline_section_b='%f'
 let g:airline_section_c='%t %m%r'
 
+let g:lightline = {
+  \ 'colorscheme': 'nord',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'readonly', 'path', 'modified' ] ],
+  \   'right': [ [ 'lineno' ],
+  \              [ 'fileencoding', 'filetype' ] ]
+  \ },
+  \ 'component': {
+  \   'path': '%-.40f',
+  \   'lineno': '(%L) %2l:%-2v',
+  \   'test': 'tst'
+  \ },
+  \ }
 
 let g:tsuquyomi_disable_quickfix = 1
 
@@ -145,7 +164,6 @@ autocmd BufEnter *.py set sw=4 ts=4
 set mouse=a
 
 
-
 " NERDTree
 " -----------------------------------------------------------------------------"
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
@@ -188,14 +206,6 @@ let g:UltiSnipsSnippetDirectories=["custom-snippets"]
 let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
 
-" colorscheme
-" -----------------------------------------------------------------------------"
-set termguicolors
-colorscheme nord
-
-let g:gruvbox_improved_strings = 1
-let g:gruvbox_italicize_comments = 1
-
 " session
 " -----------------------------------------------------------------------------"
 set sessionoptions+=tabpages,globals
@@ -214,3 +224,9 @@ endfunc
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" colorscheme
+" -----------------------------------------------------------------------------"
+set termguicolors
+colorscheme nord
+
