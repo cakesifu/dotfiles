@@ -25,7 +25,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'ap/vim-css-color'
+Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'sass', 'less'] }
 Plug 'wavded/vim-stylus'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-obsession'
@@ -38,8 +38,8 @@ Plug 'Quramy/tsuquyomi'
 " Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'ianks/vim-tsx'
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 Plug 'Shougo/denite.nvim'
+Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
 
 call plug#end()
 
@@ -63,11 +63,11 @@ endfunction
 autocmd CmdwinEnter * let b:deoplete_sources = ['buffer']
 
 func! Multiple_cursors_before()
-    call deoplete#init#_disable()
+  let b:deoplete_disable_auto_complete = 1
 endfunc
 
 func! Multiple_cursors_after()
-    call deoplete#init#_enable()
+  let b:deoplete_disable_auto_complete = 0
 endfunc
 
 " Remove trailing whitespace ---------------------------------------------"
@@ -206,6 +206,11 @@ let g:UltiSnipsSnippetDirectories=["custom-snippets"]
 let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
 
+" colorscheme
+" -----------------------------------------------------------------------------"
+set termguicolors
+colorscheme nord
+
 " session
 " -----------------------------------------------------------------------------"
 set sessionoptions+=tabpages,globals
@@ -224,9 +229,3 @@ endfunc
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-
-" colorscheme
-" -----------------------------------------------------------------------------"
-set termguicolors
-colorscheme nord
-
