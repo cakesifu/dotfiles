@@ -101,8 +101,14 @@ local taglist_buttons = awful.util.table.join(
 )
 
 local tasklist_buttons = awful.util.table.join(
-  awful.button({ }, 3, function (c) c.minimized = true end),
-  awful.button({ }, 2, function (c) c.minimized = false end)
+  -- awful.button({ }, 1, function (c)
+  --   if c == client.focus then
+  --     c.minimized = true
+  --   else
+  --     c:emit_signal("request::activate", "tasklist", {raise = true})
+  --   end
+  -- end),
+  awful.button({ }, 3, function (c) c.minimized = not c.minimized end)
 )
 
 local function set_wallpaper(s)

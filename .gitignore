@@ -6,3 +6,4 @@ nvim/.config/nvim/autoload/*.old
 awesome/.config/awesome/config/*.local.lua
 fonts/.local/share/fonts/.uuid
 bin/bin/*.local.*
+nvim/.config/htop
