@@ -3,7 +3,7 @@ allow_bold = true
 #audible_bell = false
 #clickable_url = true
 dynamic_title = true
-font = Inconsolata 10
+font = Fira Code 11
 #fullscreen = true
 #geometry = 640x480
 #icon_name = terminal
@@ -38,29 +38,44 @@ cursor_shape = "ibeam"
 # "off", "left" or "right"
 #scrollbar = off
 [colors]
-foreground = #D8DEE9
-background = #2E3440
-foreground_bold = #D8DEE9
-cursor = #D8DEE9
-cursor_foreground = #2E3440
-highlight = #4C566A
 
-color0  = #3B4252
-color1  = #BF616A
-color2  = #A3BE8C
-color3  = #EBCB8B
-color4  = #81A1C1
-color5  = #B48EAD
-color6  = #88C0D0
-color7  = #E5E9F0
-color8  = #4C566A
-color9  = #BF616A
-color10 = #A3BE8C
-color11 = #EBCB8B
-color12 = #81A1C1
-color13 = #B48EAD
-color14 = #8FBCBB
-color15 = #ECEFF4
+# special
+foreground      = #586e75
+foreground_bold = #586e75
+cursor          = #586e75
+background      = #fdf6e3
+
+# black
+color0  = #002b36
+color8  = #657b83
+
+# red
+color1  = #dc322f
+color9  = #dc322f
+
+# green
+color2  = #859900
+color10 = #859900
+
+# yellow
+color3  = #b58900
+color11 = #b58900
+
+# blue
+color4  = #268bd2
+color12 = #268bd2
+
+# magenta
+color5  = #6c71c4
+color13 = #6c71c4
+
+# cyan
+color6  = #2aa198
+color14 = #2aa198
+
+# white
+color7  = #93a1a1
+color15 = #fdf6e3
 
 [hints]
 font = Hack 12

@@ -37,7 +37,7 @@ do
 end
 -- }}}
 
-beautiful.init(awful.util.get_configuration_dir() .. "themes/nord/theme.lua")
+beautiful.init(awful.util.get_configuration_dir() .. "themes/solarized/theme.lua")
 
 terminal = config.terminal
 modkey = config.modkey

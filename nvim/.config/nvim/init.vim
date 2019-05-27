@@ -1,14 +1,11 @@
 call plug#begin('~/.nvim/plugged')
 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/denite.nvim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'w0rp/ale'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
-
-Plug 'morhetz/gruvbox'
-Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -19,27 +16,23 @@ Plug 'othree/jspc.vim'
 Plug 'gcmt/taboo.vim'
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wesQ3/vim-windowswap'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'sass', 'less'] }
-Plug 'wavded/vim-stylus'
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-obsession'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mileszs/ack.vim'
-Plug 'cakesifu/nord-vim'
-
 " Typescript
-Plug 'Quramy/tsuquyomi'
+" Plug 'Quramy/tsuquyomi'
 " Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'ianks/vim-tsx'
-Plug 'Shougo/denite.nvim'
-Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
+" Plug 'ianks/vim-tsx'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh' }
+
+" Colorthemes
+Plug 'morhetz/gruvbox'
+Plug 'iCyMind/NeoSolarized'
 
 call plug#end()
 
@@ -106,7 +99,7 @@ let g:airline_section_b='%f'
 let g:airline_section_c='%t %m%r'
 
 let g:lightline = {
-  \ 'colorscheme': 'nord',
+  \ 'colorscheme': 'solarized',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'readonly', 'path', 'modified' ] ],
@@ -161,8 +154,17 @@ autocmd BufEnter *.[jt]sx? set colorcolumn=120
 autocmd BufEnter * set sw=2 ts=2
 autocmd BufEnter *.py set sw=4 ts=4
 
-set mouse=a
+" Set cursor color and shape
+" highlight Cursor guifg=white guibg=black
+" highlight iCursor guifg=#dc322f guibg=steelblue
+highlight Cursor gui=reverse guifg=reverse guibg=reverse
+highlight iCursor gui=reverse guifg=NONE guibg=NONE
 
+set guifont=Fira\ Code:h11
+set guicursor=a:block-Cursor
+set guicursor+=i:ver25-iCursor
+set guicursor+=a:blinkon250-blinkoff100
+set mouse=a
 
 " NERDTree
 " -----------------------------------------------------------------------------"
@@ -186,12 +188,9 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
     \ }
 
-
 " fix delete key for sta  dsf
 map <F1> <del>
 map! <F1> <del>
-
-
 
 " toggle hlsearch with \hs
 nmap <leader>hs :set hlsearch! hlsearch?<CR>
@@ -209,7 +208,11 @@ let g:typescript_compiler_options = ''
 " colorscheme
 " -----------------------------------------------------------------------------"
 set termguicolors
-colorscheme nord
+colorscheme NeoSolarized
+set background=light
+let g:neosolarized_bold = 1
+let g:neosolarized_underline = 1
+let g:neosolarized_italic = 1
 
 " session
 " -----------------------------------------------------------------------------"
