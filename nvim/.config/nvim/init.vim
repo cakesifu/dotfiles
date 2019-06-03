@@ -198,6 +198,13 @@ nmap <leader>hs :set hlsearch! hlsearch?<CR>
 " search selected with //
 vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
 
+" copy current file to clipboard
+function! CopyFilePathToClipboard()
+  let @+=expand("%")
+endfunc
+
+nmap <leader>cp :call CopyFilePathToClipboard()<CR>
+
 let g:UltiSnipsSnippetDirectories=["custom-snippets"]
 
 " typescript
