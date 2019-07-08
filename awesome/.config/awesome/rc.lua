@@ -407,7 +407,8 @@ awful.rules.rules = {
           "veromix",
           "xtightvncviewer",
           "pavucontrol",
-          "galculator"
+          "galculator",
+          "qalculate-gtk"
         },
 
         name = {
@@ -417,7 +418,6 @@ awful.rules.rules = {
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
-          "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
       },
       properties = { floating = true }
