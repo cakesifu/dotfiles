@@ -28,7 +28,7 @@ Plug 'mileszs/ack.vim'
 " Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'ianks/vim-tsx'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh' }
+Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
 
 " Colorthemes
 Plug 'morhetz/gruvbox'
