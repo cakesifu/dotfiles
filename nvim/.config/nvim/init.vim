@@ -28,7 +28,7 @@ Plug 'mileszs/ack.vim'
 " Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'ianks/vim-tsx'
-Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
+Plug 'mhartington/nvim-typescript', {'do': ':!install.sh \| :UpdateRemotePlugins'}
 
 " Colorthemes
 Plug 'morhetz/gruvbox'
@@ -153,6 +153,8 @@ autocmd BufEnter * set colorcolumn=100
 autocmd BufEnter *.[jt]sx? set colorcolumn=120
 autocmd BufEnter * set sw=2 ts=2
 autocmd BufEnter *.py set sw=4 ts=4
+" make :W the same as :w sick of this happening
+command W w
 
 " Set cursor color and shape
 " highlight Cursor guifg=white guibg=black
