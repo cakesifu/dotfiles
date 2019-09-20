@@ -11,7 +11,7 @@ PACKAGES_DESKTOP=(rofi awesome chromium thunar volumeicon lxappearance-gtk3
                   pavucontrol termite
                   gnome-themes-standard arandr xsel arc-gtk-theme arc-icon-theme
                   conky lxdm slock redshift cbatticon ttf-inconsolata
-                  ttf-bitstream-vera ttf-dejavu adobe-source-code-pro-fonts ttf-hack
+                  ttf-bitstream-vera ttf-dejavu adobe-source-code-pro-fonts ttf-hack ttf-fira-code
                   ttf-roboto ttf-freefont ttf-droid network-manager-applet python-xdg
                   gitg)
 
