@@ -29,7 +29,7 @@ Plug 'mileszs/ack.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'ianks/vim-tsx'
 Plug 'mhartington/nvim-typescript', {'do': ':!install.sh \| :UpdateRemotePlugins'}
-
+Plug 'jparise/vim-graphql'
 " Colorthemes
 Plug 'morhetz/gruvbox'
 Plug 'iCyMind/NeoSolarized'
