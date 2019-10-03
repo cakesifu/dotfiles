@@ -2,6 +2,7 @@ call plug#begin('~/.nvim/plugged')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/denite.nvim'
+Plug 'Shougo/echodoc.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'w0rp/ale'
@@ -15,7 +16,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'othree/jspc.vim'
 Plug 'gcmt/taboo.vim'
 Plug 'SirVer/ultisnips'
-Plug 'ervandew/supertab'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
@@ -31,37 +31,30 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': ':!install.sh \| :UpdateRemotePlugins'}
 Plug 'jparise/vim-graphql'
 " Colorthemes
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 Plug 'iCyMind/NeoSolarized'
+Plug 'ncm2/float-preview.nvim'
 
 call plug#end()
-
-" supertab
-autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-autocmd FileType typescript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Deoplete --------------------------------------------------------------"
 
 let g:deoplete#enable_at_startup = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-let g:deoplete#auto_complete_delay = 100
+" call deoplete#custom#option('auto_complete', v:false)
+call deoplete#custom#option('auto_complete_delay', 300)
+call deoplete#custom#option('max_list', 25)
+call deoplete#custom#option('min_pattern_length', 3)
+call deoplete#custom#option('on_insert_enter', v:false)
 
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+function g:Multiple_cursors_before()
+  call deoplete#custom#buffer_option('auto_complete', v:false)
+endfunction
+function g:Multiple_cursors_after()
+  call deoplete#custom#buffer_option('auto_complete', v:true)
 endfunction
 
-autocmd CmdwinEnter * let b:deoplete_sources = ['buffer']
-
-func! Multiple_cursors_before()
-  let b:deoplete_disable_auto_complete = 1
-endfunc
-
-func! Multiple_cursors_after()
-  let b:deoplete_disable_auto_complete = 0
-endfunc
+let g:echodoc#enable_at_startup = 1
 
 " Remove trailing whitespace ---------------------------------------------"
 autocmd BufWritePre * :FixWhitespace
