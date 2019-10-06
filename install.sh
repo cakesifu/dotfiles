@@ -7,13 +7,13 @@ SYS_DIR=${ROOT_DIR:='/etc'}
 
 PACKAGES_CONSOLE=(tmux openssh ack htop tree make bash-completion neovim
                   git networkmanager curl python python-neovim)
-PACKAGES_DESKTOP=(rofi awesome chromium thunar volumeicon lxappearance-gtk3
+PACKAGES_DESKTOP=(rofi awesome firefox thunar volumeicon lxappearance-gtk3
                   pavucontrol termite
                   gnome-themes-standard arandr xsel arc-gtk-theme arc-icon-theme
                   conky lxdm slock redshift cbatticon ttf-inconsolata
                   ttf-bitstream-vera ttf-dejavu adobe-source-code-pro-fonts ttf-hack ttf-fira-code
                   ttf-roboto ttf-freefont ttf-droid network-manager-applet python-xdg
-                  gitg)
+                  gitg tk)
 
 debug() {
   [[ -n $DEBUG ]] && echo $@
@@ -24,6 +24,9 @@ check_deps() {
 }
 
 install_config() {
+  mkdir -p "$target_path/.local/share"
+  mkdir -p "$target_path/.config"
+
   target_path=`realpath ${2}`
   debug "Installing config package:" $1 " -> " $target_path
   stow -v -t $target_path $1
@@ -47,8 +50,8 @@ help_message() {
   echo "   config:user"
   echo "   config:root           -- requires sudo"
   echo "   config:sys            -- requires sudo"
-  echo "   packages:console"
-  echo "   packages:desktop"
+  echo "   packages:console"     -- requires sudo
+  echo "   packages:desktop"     -- requires sudo
   echo " "
   echo " Other usage:"
   echo "   stow <package>        - to install some package config"
@@ -67,7 +70,6 @@ for ARG in "$@"
 do
   case $ARG in
     config:user)
-      mkdir -p "$USER_DIR/.local/fonts"
       install_config "apps" "$USER_DIR"
       install_config "aur-builds" "$USER_DIR"
       install_config "awesome" "$USER_DIR"
@@ -90,6 +92,7 @@ do
       ;;
 
     packages:desktop)
+      install_packages console
       install_packages desktop
       ;;
     packages:console)
