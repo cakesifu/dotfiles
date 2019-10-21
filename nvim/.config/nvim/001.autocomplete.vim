@@ -13,8 +13,6 @@ call deoplete#custom#option('auto_complete_delay', 100)
 call deoplete#custom#option('max_list', 25)
 call deoplete#custom#option('min_pattern_length', 1)
 call deoplete#custom#option('on_insert_enter', v:false)
-call deoplete#custom#option('profile', v:true)
-call deoplete#enable_logging('DEBUG', 'deoplete.log')
 
 " source customization
 call deoplete#custom#source('typescript', 'rank', 1000)
