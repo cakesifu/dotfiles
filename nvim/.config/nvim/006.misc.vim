@@ -6,9 +6,9 @@ set expandtab autoindent smarttab
 set synmaxcol=200
 
 set guifont=Fira\ Code:h11
-set guicursor=a:block-Cursor
-set guicursor+=i:ver25-iCursor
-set guicursor+=a:blinkon250-blinkoff100
+set guicursor=a:hor33-Cursor
+set guicursor+=i:ver33-iCursor
+set guicursor+=a:blinkon200-blinkoff50
 
 set mouse=a
 
