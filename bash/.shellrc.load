@@ -44,11 +44,11 @@ alias ll='ls -alh'
 # ----------------------------------------
 
 GIT=''
-red='\[\e[1;31m\]'
-green='\[\e[1;32m\]'
+red='\[\e[0;31m\]'
+green='\[\e[0;32m\]'
 yellow='\[\e[1;33m\]'
 blue='\[\e[1;34m\]'
-grey='\[\e[0;90m\]'
+grey='\[\e[0;37m\]'
 nocolor='\[\e[0m\]'
 
 if ! type __git_ps1 >/dev/null 2>&1; then
@@ -67,17 +67,30 @@ if type __git_ps1 >/dev/null 2>&1; then
   GIT+="$nocolor"
 fi
 
+SESSION_TYPE=local
+
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  SESSION_TYPE=remote/ssh
+# many other tests omitted
+else
+  case $(ps -o comm= -p $PPID) in
+    sshd|*/sshd) SESSION_TYPE=remote/ssh;;
+  esac
+fi
+
+[[ $SESSION_TYPE != "remote/ssh" ]] && host_tag="\[\e[1;33m\]\h\[\e[0m" || host_tag="\[\e[7;33m\]\h\[\e[0m"
+
 if [[ $EUID -ne 0 ]]; then
   # user
-  PS1="${green}\u\$nocolor @ ${yellow}\h ${blue}\w $nocolor $GIT"
+  PS1="${green}\u\$nocolor @ ${host_tag} ${blue}\w $nocolor $GIT"
   PS1+="\r\n${grey}\!$nocolor (\t) ${green}\$ $nocolor"
 else
   # root
-  PS1="${red}\u\$nocolor @ ${yellow}\h ${blue}\w $nocolor $GIT"
+  PS1="${red}\u\$nocolor @ ${host_tag} ${blue}\w $nocolor $GIT"
   PS1+="\r\n${grey}\!$nocolor (\t) ${red}\$ $nocolor"
 fi
 
-unset GIT red green yellow blue nocolor grey
+unset GIT red green yellow blue nocolor grey host_tag
 
 # ----------------------------------------
 #  BASH CONFIG

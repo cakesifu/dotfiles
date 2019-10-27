@@ -26,10 +26,10 @@ check_deps() {
 }
 
 install_config() {
+  target_path=`realpath ${2}`
   mkdir -p "$target_path/.local/share"
   mkdir -p "$target_path/.config"
 
-  target_path=`realpath ${2}`
   debug "Installing config package:" $1 " -> " $target_path
   stow -v -t $target_path $1
 }
@@ -83,6 +83,7 @@ do
       install_config "nvim" "$USER_DIR"
       install_config "tmux" "$USER_DIR"
       install_config "termite" "$USER_DIR"
+      install_config "alacritty" "$USER_DIR"
       ;;
     config:root)
       install_config "bash" "$ROOT_DIR"
