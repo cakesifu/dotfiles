@@ -8,11 +8,11 @@ set completeopt=noselect,menuone
 
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-call deoplete#custom#option('auto_complete', v:false)
-call deoplete#custom#option('auto_complete_delay', 100)
+call deoplete#custom#option('auto_complete', v:true)
+call deoplete#custom#option('auto_complete_delay', 300)
 call deoplete#custom#option('max_list', 25)
 call deoplete#custom#option('min_pattern_length', 1)
-call deoplete#custom#option('on_insert_enter', v:false)
+call deoplete#custom#option('on_insert_enter', v:true)
 
 " source customization
 call deoplete#custom#source('typescript', 'rank', 1000)

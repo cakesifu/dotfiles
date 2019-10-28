@@ -2,11 +2,11 @@
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'typescript': ['tslint', 'tsserver', 'typecheck'],
+\   'typescript': ['eslint', 'tslint', 'tsserver', 'typecheck'],
 \}
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
-\   'typescript': ['tslint'],
+\   'typescript': ['eslint', 'tslint'],
 \}
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
