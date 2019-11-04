@@ -18,3 +18,4 @@
   default = tracking
 [gui]
   warndetachedcommit = true
+	spellingdictionary = none
