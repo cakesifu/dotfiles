@@ -11,6 +11,15 @@ nmap <leader>gl :Glog<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gp :Git push<CR>
 
+" copy to global with \y and paste with \p
+nmap <leader>yy "+yy
+nmap <leader>y "+y
+nmap <leader>p "+p
+
+" show typescript type with \v and import with \i
+nmap <leader>v :TSType<CR>
+nmap <leader>i :TSImport<CR>
+
 " fix delete key for sta  dsf
 map <F1> <del>
 map! <F1> <del>
