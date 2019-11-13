@@ -18,7 +18,7 @@ nmap <leader>p "+p
 
 " show typescript type with \v and import with \i
 nmap <leader>v :TSType<CR>
-nmap <leader>i :TSImport<CR>
+nmap <leader>i :TSGetCodeFix<CR>
 
 " fix delete key for sta  dsf
 map <F1> <del>
