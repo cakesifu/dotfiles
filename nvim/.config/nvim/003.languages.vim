@@ -22,3 +22,8 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn)$|bower_components|node_modules',
     \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
     \ }
+
+" vim-jsx-pretty -------------------------------------------------------"
+
+let g:vim_jsx_pretty_highlight_close_tag = 1
+let g:vim_jsx_pretty_disable_tsx = 0
