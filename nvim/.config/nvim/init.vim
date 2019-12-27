@@ -33,6 +33,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'chemzqm/vim-jsx-improve'
 Plug 'kevinhui/vim-docker-tools'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 call plug#end()
 

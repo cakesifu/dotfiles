@@ -1,4 +1,3 @@
-nmap <leader>f :ALEFix<CR>
 map <F8> <Plug>(ale_fix)
 
 map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
@@ -15,6 +14,11 @@ nmap <leader>gp :Git push<CR>
 nmap <leader>yy "+yy
 nmap <leader>y "+y
 nmap <leader>p "+p
+nmap <leader>P "+P
+
+" format
+nmap <leader>f <Plug>(Prettier)
+nmap <leader>F :ALEFix<CR>
 
 " show typescript type with \v and import with \i
 nmap <leader>v :TSType<CR>

@@ -42,7 +42,7 @@ schemes:
       blue:    '0x839496' # base0
       magenta: '0x6c71c4' # violet
       cyan:    '0x93a1a1' # base1
-      white:   '0xfdf6e3' # base3
+      white:   '0xeee8d5' # base2
 
     dim:
       black:   '0x002b36' # base03
@@ -52,7 +52,7 @@ schemes:
       blue:    '0x839496' # base0
       magenta: '0x6c71c4' # violet
       cyan:    '0x93a1a1' # base1
-      white:   '0xfdf6e3' # base3
+      white:   '0xeee8d5' # base2
 
     indexed_colors: []
 
