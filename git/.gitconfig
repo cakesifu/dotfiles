@@ -19,3 +19,5 @@
 [gui]
   warndetachedcommit = true
 	spellingdictionary = none
+[pull]
+	ff = only
