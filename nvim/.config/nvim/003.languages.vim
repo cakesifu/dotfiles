@@ -34,6 +34,7 @@ let g:vim_jsx_pretty_disable_tsx = 0
 
 " vim-prettier ---------------------------------------------------------"
 
+let g:prettier#quickfix_enabled = 0
 let g:prettier#exec_cmd_async = 1
 autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.yaml,*.html,*.yml Prettier
 

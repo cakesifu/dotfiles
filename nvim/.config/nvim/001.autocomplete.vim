@@ -1,7 +1,7 @@
 " Deoplete
 " -------------------------------------
 
-let g:deoplete#enable_at_startup = 0
+let g:deoplete#enable_at_startup = 1
 autocmd BufEnter * call deoplete#enable()
 set shortmess+=c
 set completeopt=noselect,menuone
