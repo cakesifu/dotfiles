@@ -125,7 +125,7 @@ end
 
 screen.connect_signal("property::geometry", set_wallpaper)
 
-local first = awful.screen.getbycoord(0, 0)
+local first = awful.screen.getbycoord(0, 1440)
 awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
@@ -169,7 +169,7 @@ local spacer = awful.wibar({
   width=30,
   height=15,
   bg="#ffffff00",
-  x=1900,
+  x=2560,
   align="bottom_right",
   struts={bottom=15}
 })

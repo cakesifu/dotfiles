@@ -28,7 +28,7 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mileszs/ack.vim'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'commit': '37c3880940ff4c066bbbbddc3184bda703fba12b', 'build': './install.sh', 'do': ':UpdateRemotePlugins' }
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'jparise/vim-graphql'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'chemzqm/vim-jsx-improve'

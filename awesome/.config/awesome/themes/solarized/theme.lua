@@ -110,13 +110,6 @@ theme.arrow6 = theme.wd .. "arrows/6.png"
 
 local walls = {
   theme.walld .. "wall_dark_01.png",
-  theme.walld .. "wall_dark_02.jpg",
-  theme.walld .. "wall_dark_03.jpg",
-  theme.walld .. "wall_dark_04.jpg",
-  theme.walld .. "wall_dark_05.png",
-  theme.walld .. "wall_dark_06.jpg",
-  theme.walld .. "wall_dark_07.jpg",
-  theme.walld .. "wall_dark_08.jpg"
 }
 theme.default_bg = theme.bg0
 
