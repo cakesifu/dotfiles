@@ -5,17 +5,8 @@ let g:NERDTrimTrailingWhitespace = 1
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
 let NERDTreeRespectWildIgnore=1
 
-map <leader>n :call OpenNerd()<CR>
+map <leader>n :NERDTreeToggleVCS<CR>
 map <leader>N :call SyncTree()<CR>
-
-function! OpenNerd()
-  if IsNERDTreeOpen()
-    NERDTreeToggleVCS
-  else
-    NERDTreeToggleVCS
-    wincmd p
-  endif
-endfunction
 
 function! IsNERDTreeOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
