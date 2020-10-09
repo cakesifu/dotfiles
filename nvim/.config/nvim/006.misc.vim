@@ -1,3 +1,10 @@
+" Disable safe write
+" -------------------------------------
+set nobackup
+set nowritebackup
+
+" Other
+" -------------------------------------
 set wildignore=*.egg-info,*.pyc,node_modules,.git,.tern*,Session.vim,build
 set list listchars=tab:›\ ,trail:·,extends:>,precedes:<
 set noswapfile

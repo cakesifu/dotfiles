@@ -9,7 +9,6 @@ Plug 'iCyMind/NeoSolarized'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'deoplete-plugins/deoplete-docker'
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
@@ -28,7 +27,7 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mileszs/ack.vim'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'mhartington/nvim-typescript', {'do': '!install.sh \| UpdateRemotePlugins '}
 Plug 'jparise/vim-graphql'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'chemzqm/vim-jsx-improve'
@@ -36,6 +35,7 @@ Plug 'kevinhui/vim-docker-tools'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'jxnblk/vim-mdx-js'
+Plug 'b4b4r07/vim-hcl'
 
 
 call plug#end()
