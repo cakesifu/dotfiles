@@ -1,7 +1,3 @@
-map <F8> <Plug>(ale_fix)
-
-map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
-map <leader>N :NERDTreeFind<CR>
 
 nmap <leader>gb :Gblame<CR>
 nmap <leader>gs :Gstatus<CR>
@@ -17,12 +13,12 @@ nmap <leader>p "+p
 nmap <leader>P "+P
 
 " format
-nmap <leader>f <Plug>(Prettier)
-nmap <leader>F :ALEFix<CR>
+" nmap <leader>f <Plug>(Prettier)
+" nmap <leader>F :ALEFix<CR>
 
 " show typescript type with \v and import with \i
-nmap <leader>v :TSType<CR>
-nmap <leader>i :TSGetCodeFix<CR>
+" nmap <leader>v :TSType<CR>
+" nmap <leader>i :TSGetCodeFix<CR>
 
 " fix delete key for sta  dsf
 map <F1> <del>

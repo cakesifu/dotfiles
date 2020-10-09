@@ -2,10 +2,11 @@
 " -------------------------------------
 set nobackup
 set nowritebackup
+set hidden
 
 " Other
 " -------------------------------------
-set wildignore=*.egg-info,*.pyc,node_modules,.git,.tern*,Session.vim,build
+set wildignore=*.egg-info,*.pyc,node_modules,.git,.tern*,Session.vim
 set list listchars=tab:›\ ,trail:·,extends:>,precedes:<
 set noswapfile
 set number nowrap cursorline incsearch ignorecase smartcase
@@ -18,6 +19,9 @@ set guicursor+=i:ver33-iCursor
 set guicursor+=a:blinkon200-blinkoff50
 
 set mouse=a
+set cmdheight=2
+set updatetime=500
+set shortmess+=c
 
 " Colorscheme
 " -------------------------------------
