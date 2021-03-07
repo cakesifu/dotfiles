@@ -9,7 +9,7 @@ let g:lightline = {
   \              [ 'fileencoding', 'filetype' ] ]
   \ },
   \ 'inactive': {
-    \  'left': [ ['path']],
+    \  'left': [ ['path', 'modified']],
     \  'right': [['lineno'], ['fileencoding', 'filetype']],
   \ },
   \ 'component_function': {
