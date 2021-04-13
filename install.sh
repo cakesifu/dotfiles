@@ -6,7 +6,7 @@ ROOT_DIR=${ROOT_DIR:='/root'}
 SYS_DIR=${ROOT_DIR:='/etc'}
 
 PACKAGES_CONSOLE=(tmux openssh ack htop tree make bash-completion neovim
-                  git networkmanager curl python python-neovim base-devel)
+                  git networkmanager curl python python-neovim base-devel bat)
 PACKAGES_DESKTOP=(rofi awesome firefox thunar volumeicon lxappearance-gtk3
                   pavucontrol alacritty galculator eog evince
                   gnome-themes-standard arandr xsel arc-gtk-theme arc-icon-theme
@@ -84,11 +84,13 @@ do
       install_config "tmux" "$USER_DIR"
       install_config "termite" "$USER_DIR"
       install_config "alacritty" "$USER_DIR"
+      install_config "bat" "$USER_DIR"
       ;;
     config:root)
       install_config "bash" "$ROOT_DIR"
       install_config "nvim" "$ROOT_DIR"
       install_config "tmux" "$ROOT_DIR"
+      install_config "bat" "$ROOT_DIR"
       ;;
     config:sys)
       install_config "sys" "$SYS_DIR"
