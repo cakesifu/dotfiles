@@ -7,8 +7,8 @@ if [ -d /opt/google_appengine ]; then
   PATH="$PATH:/opt/google_appengine"
 fi
 
-if [ -d /usr/local/heroku/bin ]; then
-  PATH="$PATH:/usr/local/heroku/bin"
+if [ -d $HOME/.deno/bin ]; then
+  PATH="$PATH:$HOME/.deno/bin"
 fi
 
 export EDITOR=nvim
