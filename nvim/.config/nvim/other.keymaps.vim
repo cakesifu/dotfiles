@@ -1,9 +1,9 @@
 
-nmap <leader>gb :Gblame<CR>
-nmap <leader>gs :Gstatus<CR>
+nmap <leader>gb :Git blame<CR>
+nmap <leader>gs :Gid<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>gl :Glog<CR>
-nmap <leader>gc :Gcommit<CR>
+nmap <leader>gc :Git commit<CR>
 nmap <leader>gp :Git push<CR>
 
 " copy to global with \y and paste with \p
