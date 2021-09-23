@@ -4,25 +4,15 @@
 # Always color, even if piping to a another program
 --color
 
-# rails projects
---ignore-dir=.sass-cache
-
---type-add=css=scss
---type-add=ruby=.haml,.rselm,.feature,.ru,.lock
-
 # node.js setup
 --ignore-dir=node_modules
 --ignore-dir=dist
 --ignore-dir=build
+--ignore-dir=.next
+--ignore-file=is:package-lock.json
 
---type-set=coffee=.coffee
 --type-set=jade=.jade
---type-set=feature=.feature
 --type-set=json=.json
 
 --type-add=js=.jsx
---type-add=ts=js
 --type-add=ts=.tsx,.ts
-# oodrive
---ignore-dir=demo
---ignore-dir=release

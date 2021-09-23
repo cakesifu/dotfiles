@@ -6,7 +6,7 @@ set hidden
 
 " Other
 " -------------------------------------
-set wildignore=*.egg-info,*.pyc,node_modules,.git,.tern*,Session.vim
+set wildignore=*.egg-info,*.pyc,node_modules,.git,.tern*,Session.vim,.next
 set list listchars=tab:›\ ,trail:·,extends:>,precedes:<
 set noswapfile
 set number nowrap cursorline incsearch ignorecase smartcase
