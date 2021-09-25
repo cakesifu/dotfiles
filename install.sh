@@ -11,7 +11,7 @@ PACKAGES_DESKTOP=(rofi awesome firefox thunar volumeicon lxappearance-gtk3
                   pavucontrol alacritty galculator eog evince
                   gnome-themes-standard arandr xsel arc-gtk-theme arc-icon-theme
                   xcursor-pinux xcursor-premium
-                  conky slock redshift cbatticon ttf-inconsolata
+                  conky slock xss-lock xautolock redshift cbatticon ttf-inconsolata
                   ttf-bitstream-vera ttf-dejavu adobe-source-code-pro-fonts ttf-hack ttf-fira-code
                   ttf-roboto ttf-freefont ttf-droid ttf-ubuntu-font-family
                   network-manager-applet python-xdg
