@@ -1,0 +1,161 @@
+/******************************************************************************
+ * ROFI Color theme
+ * User: Rasi
+ * Copyright: Rasmus Steinke
+ ******************************************************************************/
+* {
+  base03:    #002b36;
+  base02:    #073642;
+  base01:    #586e75;
+  base00:    #657b83;
+  base0:     #839496;
+  base1:     #93a1a1;
+  base2:     #eee8d5;
+  base3:     #fdf6e3;
+  yellow:    #b58900;
+  orange:    #cb4b16;
+  red:       #dc322f;
+  magenta:   #d33682;
+  violet:    #6c71c4;
+  blue:      #268bd2;
+  cyan:      #2aa198;
+  green:     #859900;
+  background-color: transparent;
+  radius: 10px;
+  spacing: 5px;
+  padding: 5px;
+  text-color: @base02;
+}
+
+window {
+  transparency: "screenshot";
+  border-color: @blue;
+}
+
+mainbox {
+  spacing: @spacing;
+  background-color: transparent;
+}
+
+message {
+  border:       1px dash 0px 0px ;
+  border-color: @red;
+  padding:      1px ;
+  background-color: @orange;
+}
+
+textbox {
+    text-color: @base3;
+}
+
+listview {
+  fixed-height: 0;
+  border: 2px;
+  border-radius: @radius;
+  border-color: @green;
+  background-color: @base2;
+  spacing: 1px;
+  scrollbar: false;
+  padding: @padding;
+}
+
+element {
+  border: 1px;
+  border-color: transparent;
+  border-radius:  5px;
+  padding: 1px;
+  text-color: @base00;
+}
+
+element-text {
+  text-color: inherit;
+  padding: 4px;
+}
+
+element-icon {
+  padding: 4px;
+}
+
+element.normal.normal {
+}
+
+element.selected.normal {
+  background-color: @base3;
+  text-color:       @base02;
+}
+
+element.normal.active {
+  text-color: @yellow;
+}
+
+element.selected.active {
+  text-color: @yellow;
+  background-color: @base3;
+}
+
+
+element.normal.urgent {
+  border-color: @red;
+  text-color: @red;
+}
+
+element.selected.urgent {
+  background-color: @red;
+  text-color: @base3;
+}
+
+scrollbar {
+  width:        4px ;
+  border:       0;
+  handle-width: 8px ;
+  padding:      0;
+}
+
+/* INPUT BAR */
+
+inputbar {
+  spacing: 3px;
+  border: 2px;
+  border-radius: @radius;
+  background-color: @base2;
+  border-color: @blue;
+  padding:  @padding;
+  children:   [ prompt, entry,case-indicator ];
+}
+
+case-indicator {
+  spacing:    0;
+  text-color: @red;
+}
+
+prompt {
+  background-color: @base3;
+  border-radius: 7px;
+  text-color: @base01;
+  text-style: "bold";
+}
+
+entry {
+  text-color: @base03;
+}
+
+/* MODE SWITCHER */
+
+mode-switcher {
+  border: 2px;
+  border-radius: @radius;
+  padding: @padding;
+  background-color: @base2;
+  border-color: @violet;
+}
+
+button {
+  border-radius: 7px;
+  background-color: @base3;
+  text-color: @base00;
+}
+
+button.selected {
+  background-color: @violet;
+  text-color: @base2;
+}
