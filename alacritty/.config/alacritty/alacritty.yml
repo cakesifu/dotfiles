@@ -84,6 +84,8 @@ window:
   # Window class (Linux only):
   class: alacritty
 
+  opacity: 1
+
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
@@ -97,7 +99,7 @@ scrolling:
 font:
   normal:
     family: FiraCode Nerd Font Mono
-  size: 10
+  size: 11
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -142,12 +144,6 @@ bell:
   animation: EaseOutExpo
   duration: 0
   color: "0xffffff"
-
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1.0
 
 # Mouse bindings
 #
