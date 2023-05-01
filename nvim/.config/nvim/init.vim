@@ -31,6 +31,7 @@ Plug 'ekalinin/Dockerfile.vim'
 " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'jxnblk/vim-mdx-js'
 Plug 'b4b4r07/vim-hcl'
+Plug 'towolf/vim-helm'
 
 
 call plug#end()

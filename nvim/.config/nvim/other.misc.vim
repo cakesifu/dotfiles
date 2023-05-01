@@ -32,8 +32,13 @@ let g:neosolarized_bold = 1
 let g:neosolarized_underline = 1
 let g:neosolarized_italic = 1
 
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 highlight Cursor gui=reverse guifg=reverse guibg=reverse
 highlight iCursor gui=reverse guifg=NONE guibg=NONE
+hi CocFloating ctermbg=white guibg=#eee8d5
+hi CocErrorFloat guifg=#dc322f guibg=NONE
+
 
 " Session
 " -------------------------------------
