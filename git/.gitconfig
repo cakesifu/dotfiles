@@ -23,3 +23,13 @@
 	ff = only
 [init]
 	defaultBranch = main
+[merge]
+	tool = vscode
+[mergetool]
+	keepBackup = false
+	hideResolved = false
+[mergetool "meld"]
+	useAutoMerge = true
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+

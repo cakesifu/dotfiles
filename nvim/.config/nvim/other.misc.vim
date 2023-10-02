@@ -23,6 +23,7 @@ set cmdheight=2
 set updatetime=500
 set shortmess+=c
 
+set title
 " Colorscheme
 " -------------------------------------
 set termguicolors
@@ -54,3 +55,8 @@ function! SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+function! SetTitle(t)
+  let &titlestring = a:t . ' %<%f (' . getcwd() . ')'
+endfunction
+
+call SetTitle('-')

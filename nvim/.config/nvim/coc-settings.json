@@ -1,9 +1,10 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "coc.preferences.formatOnSave": true,
   "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
   "eslint.autoFixOnSave": false,
-  "tsserver.enableJavascript": false,
   "prettier.requireConfig": false,
   "prettier.bracketSpacing": false,
-  "prettier.eslintIntegration": true
+  "[*]": {
+    "coc.preferences.formatOnSave": true
+  }
 }

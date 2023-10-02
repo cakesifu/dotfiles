@@ -39,6 +39,7 @@ if [ -f '/home/cezar/apps/google-cloud-sdk/completion.bash.inc' ]; then source '
 alias ls='ls --color=auto'
 alias ll='ls -alh'
 alias ktl='kubectl'
+alias assume="source assume"
 
 # ----------------------------------------
 #  PROMPT
