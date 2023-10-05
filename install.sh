@@ -5,7 +5,7 @@ USER_DIR=${USER_DIR:=$HOME}
 ROOT_DIR=${ROOT_DIR:='/root'}
 SYS_DIR=${ROOT_DIR:='/etc'}
 
-PACKAGES_CONSOLE=(tmux openssh ack htop tree make bash-completion neovim
+PACKAGES_CONSOLE=(tmux openssh ack htop tree make bash-completion neovim starship
                   git networkmanager curl python python-neovim base-devel bat)
 PACKAGES_DESKTOP=(rofi awesome firefox thunar volumeicon lxappearance-gtk3
                   pavucontrol alacritty galculator eog evince
@@ -51,7 +51,6 @@ help_message() {
   echo "Usage: install.sh [arg...]"
   echo "   config:user"
   echo "   config:root           -- requires sudo"
-  echo "   config:sys            -- requires sudo"
   echo "   packages:console"     -- requires sudo
   echo "   packages:desktop"     -- requires sudo
   echo " "
@@ -85,17 +84,15 @@ do
       install_config "termite" "$USER_DIR"
       install_config "alacritty" "$USER_DIR"
       install_config "bat" "$USER_DIR"
+      install_config "starship" "$USER_DIR"
       ;;
     config:root)
       install_config "bash" "$ROOT_DIR"
       install_config "nvim" "$ROOT_DIR"
       install_config "tmux" "$ROOT_DIR"
       install_config "bat" "$ROOT_DIR"
+      install_config "starship" "$ROOT_DIR"
       ;;
-    config:sys)
-      install_config "sys" "$SYS_DIR"
-      ;;
-
     packages:desktop)
       install_packages console
       install_packages desktop
