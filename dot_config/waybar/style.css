@@ -1,0 +1,72 @@
+@import "catppuccin_frappe.css";
+
+* {
+  font-family: Ubuntu Nerd Font, sans-serif;
+  font-size: 12px;
+  color: @text;
+}
+
+window#waybar {
+  background: @base;
+  padding: 0;
+  border-radius: 10px;
+}
+
+#workspaces {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+#workspaces button {
+  padding: 2px 10px;
+  min-width: 22px;
+  margin: 0 2px 0 0;
+  border: 1px solid @base;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+#workspaces button:hover {
+  background: @surface0;
+  border: 1px solid @surface0;
+}
+
+#workspaces button.active {
+  border: 1px solid @surface0;
+  border-bottom-color: @blue; 
+  color: @yellow;
+  background: @surface0;
+}
+
+#workspaces button.empty {
+  opacity: .5;
+}
+
+#workspaces button.active.empty {
+  opacity: 1;
+}
+
+#window {
+  padding: 0 10px;
+  color: @subtext0;
+}
+
+#pulseaudio, #idle_inhibitor, #cpu, #memory, #network, #temperature, #keyboard-state, #battery, #clock, #tray, #backlight  {
+  padding: 0 10px;
+}
+
+#idle_inhibitor {
+  color: @yellow;
+  border-radius: 10px;
+}
+
+#idle_inhibitor.activated {
+  background: @yellow;
+  color: @base;
+}
+
+#clock {
+  font-weight: bold;
+  color: @yellow;
+}

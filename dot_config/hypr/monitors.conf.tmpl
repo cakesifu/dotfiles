@@ -1,0 +1,6 @@
+
+{{- range $mIdx, $mName := .hyprland.monitors }}
+{{- range $wIdx := $.hyprland.workspaces }}
+workspace = {{ $mIdx }}0{{ $wIdx }}, monitor:{{ $mName }}
+{{- end }}
+{{- end }}

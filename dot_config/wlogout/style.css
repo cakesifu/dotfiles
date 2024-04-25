@@ -1,0 +1,67 @@
+@define-color base #303446;
+@define-color text #c6d0f5;
+@define-color surface0 #414559;
+@define-color surface1 #51576d;
+@define-color blue #8caaee;
+@define-color yellow #e5c890;
+@define-color green #a6d189;
+@define-color subtext0 #a5adce;
+@define-color mauve #ca9ee6;
+
+* {
+	background-image: none;
+  font-family: Ubuntu Nerd Font, sans-serif;
+  text-shadow: none;
+  font-size: 16px;
+}
+
+window {
+	background-color: rgba(41, 44, 60, .75);
+}
+
+button {
+  color: @subtext0;
+	background-color: @base;
+  border: none;
+  border-radius: 15px;
+  outline-style: none;
+  margin: 10px;
+  box-shadow: none;
+  background-repeat: no-repeat;
+  background-position: 50% 40%;
+  background-size: 15%;
+}
+
+button:focus, button:active {
+	background-color: @surface0;
+}
+
+button:hover {
+  background-color: @mauve;
+  color: @base;
+}
+
+
+#lock {
+  background-image: image(url("./lock.png"));
+}
+
+#logout {
+  background-image: image(url("./hibernate.png"));
+}
+
+#suspend {
+  background-image: image(url("./suspend.png"));
+}
+
+#hibernate {
+  background-image: image(url("./hibernate.png"));
+}
+
+#shutdown {
+  background-image: image(url("./shutdown.png"));
+}
+
+#reboot {
+  background-image: image(url("./reboot.png"));
+}
