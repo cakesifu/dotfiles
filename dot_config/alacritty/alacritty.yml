@@ -136,6 +136,7 @@ schemes:
     indexed_colors: []
 
 window:
+  decorations: None
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.

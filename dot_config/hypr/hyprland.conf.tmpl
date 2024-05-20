@@ -1,9 +1,12 @@
 monitor=,highres,auto,1
 monitor=eDP-1,highres,auto,1
+{{ .hyprland.extraMonitorsConfig }}
+
+source=./monitors.conf
 
 # Execute your favorite apps at launch
 # exec-once = waybar & hyprpaper & firefox
-exec-once = waybar
+exec-once = waybar & hyprpaper
 
 # Source a file (multi-file configs)
 source = ~/.config/hypr/theme.conf
@@ -34,10 +37,21 @@ general {
     gaps_in = 3
     gaps_out = 5
     border_size = 2
-    col.active_border = rgba($baseAlphacc) rgba($mauveAlphaaa) 45deg
+    col.active_border = rgba($blueAlpha33) rgba($blueAlphaff) -45deg
     col.inactive_border = rgba($baseAlphacc)
 
     layout = master
+}
+
+group {
+    col.border_active = rgba($yellowAlpha33) rgba($yellowAlphaff) -45deg
+    col.border_inactive = rgba($yellowAlpha00) rgba($yellowAlpha66) -45deg
+    groupbar {
+        render_titles = false
+        col.active = rgba($yellowAlphaff)
+        col.inactive = rgba($yellowAlpha33)
+        gradients = false
+    }
 }
 
 decoration {
@@ -45,7 +59,7 @@ decoration {
     dim_strength = 0.1
     drop_shadow = false
     rounding = 10
-    inactive_opacity = 0.9
+    # inactive_opacity = 0.9
 }
 
 animations {
@@ -152,30 +166,17 @@ bind = , down, submap, reset
 bind = , Escape, submap, reset
 submap = reset
 
-source=./monitors.conf
 
 # WORKSPACES
 # Switch workspaces with mainMod + [0-9]
-bind = $mainMod, 1, exec, hypr-switch-workspace.sh 1 workspace
-bind = $mainMod, 2, exec, hypr-switch-workspace.sh 2 workspace
-bind = $mainMod, 3, exec, hypr-switch-workspace.sh 3 workspace
-bind = $mainMod, 4, exec, hypr-switch-workspace.sh 4 workspace
-bind = $mainMod, 5, exec, hypr-switch-workspace.sh 5 workspace
-bind = $mainMod, 6, exec, hypr-switch-workspace.sh 6 workspace
-bind = $mainMod, 7, exec, hypr-switch-workspace.sh 7 workspace
-bind = $mainMod, 8, exec, hypr-switch-workspace.sh 8 workspace
-bind = $mainMod, 9, exec, hypr-switch-workspace.sh 9 workspace
+{{- range $wIdx := $.hyprland.workspaces }}
+bind = $mainMod, {{ $wIdx }}, exec, hypr-switch-workspace.sh {{ $wIdx }} workspace
+{{- end }}
 
 # Move active window to a workspace with mainMod + SHIFT + [0-9]
-bind = $mainMod_SHIFT, 1, exec, hypr-switch-workspace.sh 1 movetoworkspacesilent
-bind = $mainMod_SHIFT, 2, exec, hypr-switch-workspace.sh 2 movetoworkspacesilent
-bind = $mainMod_SHIFT, 3, exec, hypr-switch-workspace.sh 3 movetoworkspacesilent
-bind = $mainMod_SHIFT, 4, exec, hypr-switch-workspace.sh 4 movetoworkspacesilent
-bind = $mainMod_SHIFT, 5, exec, hypr-switch-workspace.sh 5 movetoworkspacesilent
-bind = $mainMod_SHIFT, 6, exec, hypr-switch-workspace.sh 6 movetoworkspacesilent
-bind = $mainMod_SHIFT, 7, exec, hypr-switch-workspace.sh 7 movetoworkspacesilent
-bind = $mainMod_SHIFT, 8, exec, hypr-switch-workspace.sh 8 movetoworkspacesilent
-bind = $mainMod_SHIFT, 9, exec, hypr-switch-workspace.sh 9 movetoworkspacesilent
+{{- range $wIdx := $.hyprland.workspaces }}
+bind = $mainMod_SHIFT, {{ $wIdx }}, exec, hypr-switch-workspace.sh {{ $wIdx }} movetoworkspacesilent
+{{- end }}
 
 # Scroll through existing workspaces with mainMod + scroll
 # bind = $mainMod, mouse_down, workspace, e+1

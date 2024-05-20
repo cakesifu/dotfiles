@@ -1,0 +1,71 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+format = """
+$username@$hostname:$directory\
+$git_branch$git_commit$git_state$git_metrics$git_status\
+$kubernetes$aws
+$time$status$shlvl$character"""
+
+[character]
+
+# [prompt]
+# format = '$username'
+
+[package]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\))]($style) '
+style = 'blue bold'
+
+[pulumi]
+disabled = false
+
+[username]
+disabled = false
+format = '[$user]($style)'
+show_always = true
+
+[time]
+disabled = false
+format = '[$time]($style) '
+style = 'white'
+
+[directory]
+disabled = false
+
+
+[aws]
+symbol = '󰸏 '
+format = '[$symbol($profile )(\[$duration\] )]($style)'
+disabled = false
+force_display = true
+
+[hostname]
+disabled = false
+ssh_only = false
+format = '[$ssh_symbol$hostname]($style)'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_metrics]
+disabled = true
+
+[status]
+disabled = true
+
+[shlvl]
+disabled = false
+style = 'white'
+symbol = '❯'
+format = '[$symbol]($style)'
+repeat = true
+repeat_offset = 1
