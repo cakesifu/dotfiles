@@ -6,7 +6,9 @@ source=./monitors.conf
 
 # Execute your favorite apps at launch
 # exec-once = waybar & hyprpaper & firefox
-exec-once = waybar & hyprpaper
+exec-once = waybar 
+exec-once = hyprpaper 
+exec-once = my-idle.sh
 
 # Source a file (multi-file configs)
 source = ~/.config/hypr/theme.conf
@@ -23,6 +25,7 @@ input {
     kb_rules =
 
     follow_mouse = 1
+    mouse_refocus = false
 
     touchpad {
         natural_scroll = no
@@ -55,8 +58,8 @@ group {
 }
 
 decoration {
-    dim_inactive = true
-    dim_strength = 0.1
+    dim_inactive = false
+    dim_strength = 0.05
     drop_shadow = false
     rounding = 10
     # inactive_opacity = 0.9
@@ -122,7 +125,7 @@ bind = $mainMod, W, exec, rofi -show window
 bind = $mainMod_SHIFT, R, exec, rofi -show run
 
 # Locker
-bind = $mainMod, Escape, exec, waylock -init-color 0x303446 -input-color 0xca9ee6 -fail-color 0xe78284
+bind = $mainMod, Escape, exec, my-lockscreen.sh
 bind = $mainMod_SHIFT, Escape, exec, wlogout
 
 # bind = $mainMod, P, pseudo, # dwindle

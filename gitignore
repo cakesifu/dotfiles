@@ -1,0 +1,5 @@
+.idea
+.ackrc
+.vimrc
+.tern-*
+Session.vim
