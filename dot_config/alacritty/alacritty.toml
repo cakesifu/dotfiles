@@ -100,7 +100,7 @@ x = 0
 y = 0
 
 [font.normal]
-family = "FiraCode Nerd Font Mono"
+family = "FiraCode Nerd Font"
 
 [font.offset]
 x = 0
