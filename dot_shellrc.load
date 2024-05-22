@@ -1,7 +1,7 @@
 # vi:syntax=sh
 
 WORKON_HOME="$HOME/pyenv"
-PATH=$HOME/bin:$PATH
+PATH=$HOME/.local/bin:$HOME/bin:$PATH
 
 if [ -d /opt/google_appengine ]; then
   PATH="$PATH:/opt/google_appengine"
