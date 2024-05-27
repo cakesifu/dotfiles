@@ -14,7 +14,7 @@ exec-once = my-idle.sh
 source = ~/.config/hypr/theme.conf
 
 # Some default env vars.
-env = XCURSOR_SIZE,32
+env = XCURSOR_SIZE,16
 
 # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 input {
@@ -169,6 +169,12 @@ bind = , down, submap, reset
 bind = , Escape, submap, reset
 submap = reset
 
+# MEDIA KEYS
+bindl=, XF86AudioPlay, exec, playerctl play-pause
+bindl=, XF86AudioNext, exec, playerctl next
+bindl=, XF86AudioPrev, exec, playerctl previous
+bindl=, XF86AudioRaiseVolume, exec, playerctl volume 0.1+
+bindl=, XF86AudioLowerVolume, exec, playerctl volume 0.1-
 
 # WORKSPACES
 # Switch workspaces with mainMod + [0-9]
