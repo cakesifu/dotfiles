@@ -40,19 +40,19 @@ general {
     gaps_in = 3
     gaps_out = 5
     border_size = 2
-    col.active_border = rgba($blueAlpha33) rgba($blueAlphaff) -45deg
-    col.inactive_border = rgba($baseAlphacc)
+    col.active_border = rgb($blueAlpha) 
+    col.inactive_border = rgb($baseAlpha)
 
     layout = master
 }
 
 group {
-    col.border_active = rgba($yellowAlpha33) rgba($yellowAlphaff) -45deg
-    col.border_inactive = rgba($yellowAlpha00) rgba($yellowAlpha66) -45deg
+    col.border_active = rgb($yellowAlpha)
+    col.border_inactive = rgba($yellowAlpha66)
     groupbar {
         render_titles = false
         col.active = rgba($yellowAlphaff)
-        col.inactive = rgba($yellowAlpha33)
+        col.inactive = rgba($yellowAlpha66)
         gradients = false
     }
 }
@@ -66,18 +66,17 @@ decoration {
 }
 
 animations {
-    enabled = no
+    enabled = yes 
 
     # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
     bezier = myBezier, 0.05, 0.9, 0.1, 1.05
 
-    animation = windows, 1, 7, myBezier
-    animation = windowsOut, 1, 7, default, popin 80%
-    animation = border, 1, 10, default
-    animation = borderangle, 1, 8, default
-    animation = fade, 1, 7, default
-    animation = workspaces, 1, 6, default
+    animation = windows, 1, 3, default, slide
+    animation = border, 1, 3, default
+    animation = borderangle, 1, 3, default
+    animation = fade, 1, 3, default
+    animation = workspaces, 1, 3, default, slide
 }
 
 dwindle {
@@ -102,6 +101,9 @@ gestures {
 # Example windowrule v2
 # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+
+windowrulev2=move onscreen cursor 0 0,class:(browsers)
+windowrulev2=stayfocused,class:(browsers)
 
 
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
