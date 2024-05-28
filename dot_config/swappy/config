@@ -1,0 +1,6 @@
+[Default]
+save_dir=$HOME/Screenshots
+save_filename_format=screenshot-%Y%m%d-%H%M%S.png
+line_size=3
+text_size=15
+early_exit=true

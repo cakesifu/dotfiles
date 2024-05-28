@@ -9,6 +9,8 @@ source=./monitors.conf
 exec-once = waybar 
 exec-once = hyprpaper 
 exec-once = my-idle.sh
+exec-once = wl-paste --type text --watch cliphist store
+exec-once = wl-paste --type image --watch cliphist store
 
 # Source a file (multi-file configs)
 source = ~/.config/hypr/theme.conf
@@ -104,6 +106,7 @@ gestures {
 
 windowrulev2=move onscreen cursor 0 0,class:(browsers)
 windowrulev2=stayfocused,class:(browsers)
+windowrulev2=float,class:(galculator)
 
 
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
@@ -120,6 +123,14 @@ bindm = $mainMod, mouse:273, resizewindow
 
 # Apps
 bind = $mainMod, RETURN, exec, alacritty
+
+#   screenshot
+bind = $mainMod, F12, exec, grim -g "$(slurp)" - | swappy -f -
+bind = $mainMod_SHIFT, F12, exec, grim -g "$(slurp -o)" - | swappy -f -
+
+#   clipboard
+bind = $mainMod, V, exec, rofi -modi clipboard:my-cliphist.sh -show clipboard -show-icons
+bind = $mainMod_ALT, V, exec, cliphist list | rofi -dmenu | cliphist delete
 
 # Launcher
 bind = $mainMod, R, exec, rofi -show drun

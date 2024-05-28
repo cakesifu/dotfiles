@@ -9,7 +9,6 @@ return {
   {
     "stevearc/conform.nvim",
     opts = {
-      format_on_save = {},
       formatters_by_ft = {
         yaml = { "prettier" },
         json = { "prettier" },

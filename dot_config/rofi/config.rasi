@@ -94,7 +94,7 @@ element {
 element-icon {
     horizontal-align: 0.5;
     vertical-align: 0.5;
-    size: 24px;
+    size: 64px;
     border: 0;
 }
 
