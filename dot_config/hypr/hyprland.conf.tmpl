@@ -89,7 +89,7 @@ dwindle {
 
 master {
     # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-    new_is_master = true
+    # new_is_master = true
 }
 
 gestures {
@@ -152,6 +152,11 @@ bind = $mainMod, right, focusmonitor, r
 bind = $mainMod, up, focusmonitor, u
 bind = $mainMod, down, focusmonitor, d
 
+bind = $mainMod_SHIFT, left, movewindow, mon:l
+bind = $mainMod_SHIFT, right, movewindow, mon:r
+bind = $mainMod_SHIFT, up, movewindow, mon:u
+bind = $mainMod_SHIFT, down, movewindow, mon:d
+
 # FOCUS
 # MOD + J/K focus next/prev
 # +SHIFT moves window in current workspace
@@ -169,6 +174,8 @@ bind = $mainMod, bracketLeft, changegroupactive, b
 bind = $mainMod, bracketRight, changegroupactive, f
 bind = $mainMod, G, submap, groups
 submap = groups
+bind = , l, lockactivegroup, toggle
+bind = , l, submap, reset
 bind = , X, moveoutofgroup
 bind = , X, submap, reset
 bind = , left, moveintogroup, l

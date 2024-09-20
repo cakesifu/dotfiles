@@ -15,6 +15,7 @@ return {
         javascript = { "prettier" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
+        rust = { "rustfmt", lsp_format = "fallback" },
       },
       formatters = {
         prettier = {
@@ -29,6 +30,28 @@ return {
       filesystem = {
         follow_current_file = {
           enabled = false,
+        },
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = {
+        enabled = false,
+      },
+      servers = {
+        vtsls = {
+          settings = {
+            typescript = {
+              workspaceSymbols = {
+                scope = "currentProject",
+              },
+              tsserver = {
+                maxTsServerMemory = 8000,
+              },
+            },
+          },
         },
       },
     },
