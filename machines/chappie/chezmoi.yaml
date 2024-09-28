@@ -1,5 +1,5 @@
 edit:
-  command: nvim
+  command: neovide
 data:
   hyprland:
     monitors:

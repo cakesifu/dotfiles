@@ -26,4 +26,11 @@ if vim.g.neovide then
     let g:neovide_cursor_vfx_particle_speed = 10.0
     let g:neovide_cursor_vfx_particle_density = 9.0
   ]])
+
+  if vim.fn.getcwd() == "/" then
+    if os.getenv("HOME") ~= nil then
+      ---@diagnostic disable-next-line: param-type-mismatch
+      vim.api.nvim_set_current_dir(os.getenv("HOME"))
+    end
+  end
 end

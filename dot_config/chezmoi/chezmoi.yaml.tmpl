@@ -1,3 +1,2 @@
-{{- if eq .chezmoi.hostname "chappie" -}}
-{{- include "machines/chappie/chezmoi.yaml" -}}
-{{- end -}}
+{{- printf "machines/%s/chezmoi.yaml" .chezmoi.hostname | include -}}
+
