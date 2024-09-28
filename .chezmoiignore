@@ -1,3 +1,11 @@
 nixos/
 machines/
 arch/
+
+{{ if eq .chezmoi.os "darwin" }}
+.config/hypr/
+.config/rofi/
+.config/swappy/
+.config/waybar/
+.config/wlogout/
+{{ end }}

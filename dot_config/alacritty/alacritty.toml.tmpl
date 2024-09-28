@@ -1,3 +1,5 @@
+# vim: ft=toml
+
 live_config_reload = true
 working_directory = "None"
 
@@ -640,7 +642,11 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [window]
 class = "alacritty"
+{{ if eq .chezmoi.os "darwin" }}
+decorations = "Full"
+{{ else }}
 decorations = "None"
+{{ end }}
 dynamic_padding = false
 dynamic_title = true
 opacity = 1
