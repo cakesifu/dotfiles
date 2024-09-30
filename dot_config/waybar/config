@@ -18,6 +18,7 @@
         "class<Google-chrome>": "",
         "class<Google-chrome> title<YouTube Music>": "󰗃",
         "title<.*NVIM.*>": "",
+        "title<.*Neovide.*>": "",
         "alacritty": "",
         "code": "󰨞",
         "zoom": "",

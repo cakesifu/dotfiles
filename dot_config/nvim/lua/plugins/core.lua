@@ -32,6 +32,7 @@ return {
         follow_current_file = {
           enabled = false,
         },
+        bind_to_cwd = true,
       },
     },
   },
