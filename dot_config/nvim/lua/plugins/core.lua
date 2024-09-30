@@ -36,10 +36,39 @@ return {
     },
   },
   {
+    "folke/flash.nvim",
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump({ jump = { inclusive = false } })
+        end,
+        desc = "Flash",
+      },
+      {
+        "<c-s>",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump({ pattern = vim.fn.expand("<cword>") })
+        end,
+        desc = "Flash crt word",
+      },
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     opts = {
       inlay_hints = {
         enabled = false,
+      },
+      modes = {
+        search = {
+          enabled = true,
+          highlight = {
+            backdrop = true,
+          },
+        },
       },
       servers = {
         vtsls = {
