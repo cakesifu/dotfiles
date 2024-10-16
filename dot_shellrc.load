@@ -3,22 +3,25 @@
 WORKON_HOME="$HOME/pyenv"
 PATH=$HOME/.local/bin:$HOME/bin:$PATH
 
-if [ -d $HOME/.deno/bin ]; then
-  PATH="$PATH:$HOME/.deno/bin"
-fi
-
 export EDITOR=nvim
 export PATH
 export WORKON_HOME
+
+# load deno if available
+if [ -d $HOME/.deno/bin ]; then
+  PATH="$PATH:$HOME/.deno/bin"
+fi
 
 # load nvm if available
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# load cargo if available
 if [ -f "$HOME/.cargo/env" ]; then
   . "$HOME/.cargo/env"
 fi
+
 # do nothing more if not in interactive prompt
 [ -z "$PS1" ] && return
 
