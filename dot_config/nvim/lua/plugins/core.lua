@@ -15,7 +15,7 @@ return {
         javascript = { "prettier" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
-        rust = { "rustfmt", lsp_format = "fallback" },
+        rust = { "rustfmt", lsp_format = "first" },
       },
       formatters = {
         prettier = {
@@ -32,7 +32,6 @@ return {
         follow_current_file = {
           enabled = false,
         },
-        bind_to_cwd = true,
       },
     },
   },
