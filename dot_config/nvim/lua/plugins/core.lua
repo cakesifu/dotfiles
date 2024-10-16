@@ -86,4 +86,18 @@ return {
       },
     },
   },
+  {
+    "folke/todo-comments.nvim",
+    opts = {
+      highlight = {
+        pattern = [[.*<(KEYWORDS)\s*]],
+      },
+      heywords = {
+        TODO = { icon = " ", color = "info", alt = { "todo" } },
+        FIX = { icon = " ", color = "error", alt = { "FIXME", "fixme" } },
+        HACK = { icon = " ", color = "warning" },
+        WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+      },
+    },
+  },
 }
