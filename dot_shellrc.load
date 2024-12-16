@@ -6,6 +6,8 @@ PATH=$HOME/.local/bin:$HOME/bin:$PATH
 export EDITOR=nvim
 export PATH
 export WORKON_HOME
+export AWS_VAULT_BACKEND=file
+export AWS_VAULT_FILE_PASSPHRASE=pass
 
 # load deno if available
 if [ -d $HOME/.deno/bin ]; then

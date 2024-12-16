@@ -71,6 +71,8 @@ return {
         },
       },
       servers = {
+        gdscript = {},
+        gdshader_lsp = {},
         vtsls = {
           settings = {
             typescript = {
@@ -79,6 +81,15 @@ return {
               },
               tsserver = {
                 maxTsServerMemory = 8000,
+              },
+            },
+          },
+        },
+        yamlls = {
+          settings = {
+            yaml = {
+              format = {
+                singleQuote = true,
               },
             },
           },
@@ -97,6 +108,14 @@ return {
         FIX = { icon = " ", color = "error", alt = { "FIXME", "fixme" } },
         HACK = { icon = " ", color = "warning" },
         WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+      },
+    },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "gdscript",
       },
     },
   },

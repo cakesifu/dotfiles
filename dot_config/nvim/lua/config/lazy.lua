@@ -20,7 +20,9 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.svelte" },
     { import = "lazyvim.plugins.extras.util.chezmoi" },
+    { import = "lazyvim.plugins.extras.lang.terraform" },
     { import = "lazyvim.plugins.extras.coding.mini-comment" },
+    { import = "lazyvim.plugins.extras.lang.helm" },
     -- dap
     { import = "lazyvim.plugins.extras.dap.core" },
 
