@@ -16,6 +16,7 @@ return {
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
         rust = { "rustfmt", lsp_format = "first" },
+        gdscript = { "gdformat" },
       },
       formatters = {
         prettier = {
