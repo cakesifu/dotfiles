@@ -18,3 +18,6 @@ map("n", "\\cp", copy_path, { desc = "copy file path to clipboard" })
 
 -- open file in neotree
 map("n", "<leader>fa", ":Neotree reveal<cr>", { desc = "reveal current file in tree" })
+
+unmap("n", "<S-l>")
+unmap("n", "<S-h>")
