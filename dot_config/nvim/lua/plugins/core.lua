@@ -22,6 +22,9 @@ return {
         prettier = {
           options = {},
         },
+        gdformat = {
+          append_args = { "-s", "2" },
+        },
       },
     },
   },
