@@ -9,7 +9,7 @@ if vim.g.neovide then
   vim.cmd([[
     set guicursor=a:hor15-Cursor
     set guicursor+=i:ver20-iCursor
-    set guicursor+=a:blinkon200-blinkoff50
+    set guicursor+=a:blinkon500-blinkoff250-blinkwait200
   ]])
 
   vim.g.neovide_padding_top = 0

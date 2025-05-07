@@ -15,6 +15,7 @@
       "window-rewrite-default": "󰣆",
       "window-rewrite": {
         "firefox": "",
+        "class<Opera>": "",
         "class<Google-chrome>": "",
         "class<Google-chrome> title<YouTube Music>": "󰗃",
         "title<.*NVIM.*>": "",

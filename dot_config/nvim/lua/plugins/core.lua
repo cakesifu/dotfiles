@@ -77,6 +77,7 @@ return {
       servers = {
         gdscript = {},
         gdshader_lsp = {},
+        terraformls = {},
         vtsls = {
           settings = {
             typescript = {
