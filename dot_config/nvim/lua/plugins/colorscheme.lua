@@ -5,7 +5,7 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = {
-      flavour = "frappe",
+      flavour = "latte",
       name = "foo",
       integrations = {
         aerial = true,

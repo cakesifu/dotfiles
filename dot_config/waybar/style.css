@@ -2,13 +2,13 @@
 
 * {
   font-family: Ubuntu Nerd Font, sans-serif;
-  font-size: 12px;
-  color: @text;
+  font-size: 13px;
 }
 
 window#waybar {
   background: @base;
   padding: 0;
+  color: @text;
   border-radius: 10px;
 }
 
@@ -19,9 +19,10 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 2px 10px;
-  min-width: 22px;
-  margin: 0 2px 0 0;
+  color: @text;
+  padding: .3em .8em;
+  min-width: 2em;
+  margin: 0 .2em 0 0;
   border: 1px solid @base;
   border-radius: 10px;
   box-shadow: none;
@@ -33,10 +34,9 @@ window#waybar {
 }
 
 #workspaces button.active {
-  border: 1px solid @surface0;
-  border-bottom-color: @blue; 
-  color: @yellow;
-  background: @surface0;
+  border: 1px solid @blue;
+  color: @base;
+  background: @blue;
 }
 
 #workspaces button.empty {
@@ -47,13 +47,28 @@ window#waybar {
   opacity: 1;
 }
 
+#workspaces button.urgent {
+  color: @red;
+  opacity: 1;
+}
+
 #window {
-  padding: 0 10px;
+  padding: 0 1em;
   color: @subtext0;
 }
 
-#pulseaudio, #idle_inhibitor, #cpu, #memory, #network, #temperature, #keyboard-state, #battery, #clock, #tray, #backlight  {
-  padding: 0 10px;
+#pulseaudio,
+#idle_inhibitor,
+#cpu,
+#memory,
+#network,
+#temperature,
+#keyboard-state,
+#battery,
+#clock,
+#tray,
+#backlight {
+  padding: 0 1em;
 }
 
 #idle_inhibitor {
