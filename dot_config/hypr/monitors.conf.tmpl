@@ -1,6 +1,7 @@
 
 {{- range $mIdx, $mName := .hyprland.monitors }}
 {{- range $wIdx := $.hyprland.workspaces }}
-workspace = {{ $mIdx }}0{{ $wIdx }}, monitor:{{ $mName }}, persistent:true, defaultName:{{ $mIdx }}0{{ $wIdx }}
+workspace = {{ $mIdx }}0{{ $wIdx }}, monitor:{{ $mName }}, persistent:true, defaultName:{{ $mIdx }}0{{ $wIdx }}, layoutopt:orientation:{{ (index $.hyprland.monitorOrientation $mName) | default "left" }}
+
 {{- end }}
 {{- end }}

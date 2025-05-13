@@ -2,6 +2,10 @@ edit:
   command: neovide
 data:
   hyprland:
+    monitorOrientation:
+      DP-1: right
+      DP-2: left
+      HDMI-A-1: left
     monitors:
       - DP-1
       - DP-2

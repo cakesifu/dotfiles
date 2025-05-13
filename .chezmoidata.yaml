@@ -1,4 +1,5 @@
 hyprland:
+  monitorOrientation: {}
   monitors:
     - eDP-1
     - DP-1

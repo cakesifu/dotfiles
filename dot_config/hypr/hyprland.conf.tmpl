@@ -182,8 +182,12 @@ bind = $mainMod_SHIFT, down, movewindow, mon:d
 bind = $mainMod, TAB, focusurgentorlast
 bind = $mainMod, K, cyclenext
 bind = $mainMod, J, cyclenext, prev
-bind = $mainMod_SHIFT, K, swapnext
-bind = $mainMod_SHIFT, J, swapnext, prev
+bind = $mainMod_SHIFT, K, layoutmsg, swapnext
+bind = $mainMod_SHIFT, J, layoutmsg, swapprev
+bind = $mainMod_SHIFT, H, layoutmsg, removemaster
+bind = $mainMod_SHIFT, L, layoutmsg, addmaster
+bind = $mainMod, L, layoutmsg, rollnext
+bind = $mainMod, H, layoutmsg, rollprev
 
 # GROUPS
 # MOD + G submap for working with groups
