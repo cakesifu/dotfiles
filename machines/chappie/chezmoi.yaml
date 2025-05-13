@@ -13,4 +13,4 @@ data:
     extraMonitorsConfig: |
       monitor=DP-1,3240x2160,0x1440,1
       monitor=DP-2,3240x2160,3240x1440,1
-      monitor=HDMI-A-1,2560x1440,2560x0,1
+      monitor=HDMI-A-1,2560x1440,1960x0,1
