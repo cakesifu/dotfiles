@@ -65,10 +65,10 @@
   },
   "clock": {
     "locale": "en_GB.UTF-8",
-    "interval": 5,
+    "interval": 1,
     "tooltip-format": "<tt>{calendar}</tt>",
-    "format-alt": "{:%a, %d.%m.%Y  󰃰  %H:%M:%S}",
-    "format": "{:%a %d  󰃰  %H:%M:%S}",
+    "format-alt": "{:%a, %d.%m.%Y  󰃰  <big>%H:%M:%S</big>}",
+    "format": "{:%a %d  󰃰  <big>%H:%M:%S</big>}",
     "calendar": {
       "mode": "year",
       "mode-mon-col": 3,
