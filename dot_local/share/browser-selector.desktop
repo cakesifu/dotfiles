@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Rofi Browser Selector
+GenericName=Web Browser Chooser
+Comment=Choose a browser to open links using Rofi
+Exec=/home/cezar/.local/bin/browser-selector.sh %U
+Terminal=false
+Type=Application
+Icon=web-browser # Or specify a path to a custom icon
+Categories=Network;WebBrowser;
+MimeType=text/html;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/about;
+Keywords=web;browser;internet;rofi;
+NoDisplay=false # Set to true if you don't want it in app launchers, but it needs to be false for xdg-settings to pick it up initially for some DEs
