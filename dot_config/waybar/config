@@ -1,131 +1,205 @@
-
 {
-    "layer": "top", // Waybar at top layer
-    //"height": 20, // Waybar height (to be removed for auto height)
-    "spacing": 4, // Gaps between modules (4px)
-    "margin": "5px",
-    // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["hyprland/submap", "idle_inhibitor", "pulseaudio", "network", "group/hardware", "backlight", "battery", "tray", "clock"],
-
-    "hyprland/workspaces": {
-      "format": "{icon} {windows}",
-      "format-window-separator": " ",
-      "window-rewrite-default": "󰣆",
-      "window-rewrite": {
-        "firefox": "",
-        "class<Opera>": "",
-        "class<Google-chrome>": "",
-        "class<Google-chrome> title<YouTube Music>": "󰗃",
-        "title<.*NVIM.*>": "",
-        "title<.*Neovide.*>": "",
-        "alacritty": "",
-        "code": "󰨞",
-        "zoom": "",
-        "slack": "󰒱",
-      },  
-      // "persistent-workspaces": {
-      //    "*": 9 
-      // }
+  "layer": "top", // Waybar at top layer
+  //"height": 20, // Waybar height (to be removed for auto height)
+  "spacing": 4, // Gaps between modules (4px)
+  "margin": "5px",
+  // Choose the order of the modules
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "hyprland/submap",
+    "privacy",
+    "idle_inhibitor",
+    "network",
+    "group/hardware",
+    "backlight",
+    "battery",
+    "tray",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon} {windows}",
+    "format-window-separator": " ",
+    "window-rewrite-default": "󰣆",
+    "window-rewrite": {
+      "firefox": "",
+      "class<Opera>": "",
+      "class<Vivaldi-stable>": "󰖟",
+      "class<Google-chrome>": "",
+      "class<Google-chrome> title<YouTube Music>": "󰗃",
+      "title<.*NVIM.*>": "",
+      "title<.*Neovide.*>": "",
+      "alacritty": "",
+      "code": "󰨞",
+      "zoom": "",
+      "slack": "󰒱",
     },
-
-    "group/hardware": {
-      "orientation": "horizontal",
-      "modules": [
-        "cpu",
-        "memory",
-        "temperature" 
-      ]  
-    },
-
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "clock": {
-        // "timezone": "America/New_York",
-        "interval": 5,
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "󰃰 {:%H:%M %Y-%m-%d}",
-        "format-alt": "󰃰 {:%H:%M}"
-    },
-    "cpu": {
-        "format": " {load}",
-        "interval": 10,
-        "states": {
-            "warning": 60,
-            "critical": 80
-        }
-    },
-    "memory": {
-        "format": "󰍛 {}%",
-        "interval": 10,
-        "states": {
-            "warning": 60,
-            "critical": 80
-        }
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            "warning": 50,
-            "critical": 25
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
-        "tooltip-format": "{ifname} via {gwaddr} 󰈀",
-        "format-linked": "{ifname} (No IP) 󰈀",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+    // "persistent-workspaces": {
+    //    "*": 9 
+    // }
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "load",
+      "cpu",
+      "memory",
+      "temperature#cpu",
+      "temperature#gpu",
+      "temperature#mb"
+    ]
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
     }
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "locale": "en_GB.UTF-8",
+    "interval": 5,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "format-alt": "{:%a, %d.%m.%Y  󰃰  %H:%M:%S}",
+    "format": "{:%a %d  󰃰  %H:%M:%S}",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "format": {
+        "months": "<span color='#e5c890'><b>{}</b></span>",
+        "days": "<span color='#c6d0f5'>{}</span>",
+        "weeks": "<span color='#b5bfe2'><b>W{}</b></span>",
+        "weekdays": "<span color='#b5bfe2'>{}</span>",
+        "today": "<span color='#303446' background='#81c8be'><b>{}</b></span>"
+      }
+    }
+  },
+  "load": {
+    "format": " <span weight='bold'>{load1:0.2f}</span> <small>|</small> <span weight='bold'>{load5:0.2f}</span> <small>|</small> <span weight='bold'>{load15:0.2f}</span>",
+    "interval": 10
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}",
+    "format-icons": [
+      "<span color='#c6d0f5'>▁</span>", // white
+      "<span color='#a6d189'>▃</span>", // green
+      "<span color='#e5c890'>▄</span>", // yellow
+      "<span color='#ef9f76'>▆</span>", // orange
+      "<span color='#e78284'>█</span>" // red
+    ],
+    "states": {
+      "warning": 60,
+      "critical": 80
+    }
+  },
+  "privacy": {
+    "icon-spacing": 5,
+    "icon-size": 14,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ]
+  },
+  "memory": {
+    "format": "  <span weight='bold'>{percentage}%</span> {used:0.1f} / {total:0.1f} GB",
+    "interval": 10,
+    "states": {
+      "warning": 60,
+      "critical": 80
+    }
+  },
+  "temperature#cpu": {
+    "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input",
+    "critical-threshold": 80,
+    "format": "CPU {icon} <span weight='bold'>{temperatureC}°C</span>",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "temperature#gpu": {
+    "hwmon-path": "/sys/devices/pci0000:00/0000:00:03.1/0000:09:00.0/0000:0a:00.0/0000:0b:00.0/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format": "GPU {icon} <span weight='bold'>{temperatureC}°C</span>",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "temperature#mb": {
+    "hwmon-path": "/sys/devices/platform/PNP0C14:00/wmi_bus/wmi_bus-PNP0C14:00/DEADBEEF-2001-0000-00A0-C90629100000/hwmon/hwmon4/temp6_input",
+    "critical-threshold": 80,
+    "format": "MB {icon} <span weight='bold'>{temperatureC}°C</span>",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "{percent}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "battery": {
+    "states": {
+      "warning": 50,
+      "critical": 25
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr} <small>/{cidr}</small>  󰈀 <span weight='bold'>{ifname}</span>",
+    "tooltip-format": "{ifname} via {gwaddr} 󰈀",
+    "format-linked": "{ifname} (No IP) 󰈀",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr} <small>/{cidr}</small>"
+  }
 }
-

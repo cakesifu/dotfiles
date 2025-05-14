@@ -60,6 +60,7 @@ window#waybar {
 #pulseaudio,
 #idle_inhibitor,
 #cpu,
+#load,
 #memory,
 #network,
 #temperature,
@@ -71,9 +72,25 @@ window#waybar {
   padding: 0 1em;
 }
 
+#load {
+  padding-right: 0;
+}
+
+#network,
+#temperature,
+#clock {
+  background: @surface0;
+}
+
+
+#privacy-item {
+  background: @blue;
+  color: @base;
+  padding: 0 1em;
+}
+
 #idle_inhibitor {
   color: @yellow;
-  border-radius: 10px;
 }
 
 #idle_inhibitor.activated {
