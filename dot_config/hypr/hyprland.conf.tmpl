@@ -6,6 +6,7 @@ source=./monitors.conf
 # Execute your favorite apps at launch
 # exec-once = waybar & hyprpaper & firefox
 exec-once = waybar 
+exec-once = dunst 
 exec-once = hyprpaper 
 exec-once = my-idle.sh
 exec-once = wl-paste --type text --watch cliphist store
@@ -16,10 +17,10 @@ exec-once = systemctl --user start hyprpolkitagent
 source = ~/.config/hypr/theme.conf
 
 # Some default env vars.
-env = XCURSOR_SIZE,16
-env = XCURSOR_THEME,catppuccin-frappe-peach-cursors
-env = HYPRCURSOR_SIZE,16
-env = HYPRCURSOR_THEME,catppuccin-frappe-peach-cursors
+env = XCURSOR_SIZE,24
+env = XCURSOR_THEME,catppuccin-latte-pink-cursors
+env = HYPRCURSOR_SIZE,24
+env = HYPRCURSOR_THEME,catppuccin-latte-pink-cursors
 env = WLR_NO_HARDWARE_CURSORS,1
 env = XDG_CURRENT_DESKTOP,Hyprland
 env = XDG_SESSION_TYPE,wayland

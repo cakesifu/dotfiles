@@ -1,0 +1,52 @@
+# vim: ft=toml
+[global]
+# positioning
+follow=mouse
+origin=center
+offset=30
+
+# font and format
+font="Ubuntu Nerd Font 14"
+format = "<small>%a</small>\n<big><b>%s</b></big>\n%b"
+line_height=5
+
+# layout and size
+frame_width=0
+width=(300,600)
+padding=15
+horizontal_padding=15
+text_icon_padding=15
+min_icon_size=32
+max_icon_size=96
+gap_size = 5 
+
+#corners
+corner_radius =10 
+progress_bar_corner_radius = 5
+icon_corner_radius = 10
+corners = all
+progress_bar_corners = all
+icon_corners=all
+
+enable_recursive_icon_lookup=true
+icon_theme=Arc,Adwaita,Obsidian
+
+# colorscheme
+frame_color = "#8caaee"
+separator_color= frame
+highlight = "#8caaee"
+background = "#9ca0b0"
+foreground = "#eff1f5"
+
+[urgency_low]
+background = "#7c7f93cc"
+foreground = "#eff1f5"
+
+[urgency_normal]
+background = "#df8e1d"
+foreground = "#eff1f5"
+
+[urgency_critical]
+foreground = "#eff1f5"
+background = "#fe640b"
+frame_color = "#ef9f76"

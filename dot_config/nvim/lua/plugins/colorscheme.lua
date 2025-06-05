@@ -6,7 +6,14 @@ return {
     priority = 1000,
     opts = {
       flavour = "latte",
-      name = "foo",
+      name = "catppuccin",
+      custom_highlights = function(colors)
+        return {
+          LspReferenceText = { bg = colors.crust },
+          LspReferenceRead = { bg = colors.crust },
+          LspReferenceWrite = { bg = colors.red, fg = colors.base },
+        }
+      end,
       integrations = {
         aerial = true,
         alpha = true,
@@ -39,7 +46,7 @@ return {
         noice = true,
         notify = true,
         semantic_tokens = true,
-        telescope = false,
+        telescope = true,
         treesitter = true,
         treesitter_context = true,
         which_key = true,

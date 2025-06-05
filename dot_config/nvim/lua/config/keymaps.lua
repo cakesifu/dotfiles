@@ -21,3 +21,4 @@ map("n", "<leader>fa", ":Neotree reveal<cr>", { desc = "reveal current file in t
 
 unmap("n", "<S-l>")
 unmap("n", "<S-h>")
+
