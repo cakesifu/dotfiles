@@ -43,7 +43,7 @@ background = "#7c7f93cc"
 foreground = "#eff1f5"
 
 [urgency_normal]
-background = "#df8e1d"
+background = "#1e66f5cc"
 foreground = "#eff1f5"
 
 [urgency_critical]
