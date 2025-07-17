@@ -1,4 +1,5 @@
 {
+  "reload_on_change": true,
   "layer": "top", // Waybar at top layer
   //"height": 20, // Waybar height (to be removed for auto height)
   "spacing": 4, // Gaps between modules (4px)
@@ -14,6 +15,7 @@
     "hyprland/submap",
     "privacy",
     "idle_inhibitor",
+    "custom/dunst",
     "network",
     "group/hardware",
     "backlight",
@@ -41,7 +43,7 @@
       "code": "󰨞",
       "class<Cursor>": "󰨞",
       "zoom": "",
-      "slack": "󰒱",
+      "slack": "󰒱"
     },
     // "persistent-workspaces": {
     //    "*": 9 
@@ -198,6 +200,13 @@
       "",
       ""
     ]
+  },
+  "custom/dunst": {
+    "exec": "waybar-dunst.sh",
+    "return-type": "json",
+    "interval": 10,
+    "signal": 1,
+    "on-click": "dunstctl set-paused toggle && pkill -RTMIN+1 waybar"
   },
   "network": {
     "format-wifi": "{essid} ({signalStrength}%) ",

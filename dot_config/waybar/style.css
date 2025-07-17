@@ -20,9 +20,9 @@ window#waybar {
 
 #workspaces button {
   color: @text;
-  padding: .3em .8em;
+  padding: 0.3em 0.8em;
   min-width: 2em;
-  margin: 0 .2em 0 0;
+  margin: 0 0.2em 0 0;
   border: 1px solid @base;
   border-radius: 10px;
   box-shadow: none;
@@ -40,7 +40,7 @@ window#waybar {
 }
 
 #workspaces button.empty {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 #workspaces button.active.empty {
@@ -59,6 +59,7 @@ window#waybar {
 
 #pulseaudio,
 #idle_inhibitor,
+#custom-dunst,
 #cpu,
 #load,
 #memory,
@@ -82,7 +83,6 @@ window#waybar {
   background: @surface0;
 }
 
-
 #privacy-item {
   background: @blue;
   color: @base;
@@ -95,6 +95,15 @@ window#waybar {
 
 #idle_inhibitor.activated {
   background: @yellow;
+  color: @base;
+}
+
+#custom-dunst {
+  color: @peach;
+}
+
+#custom-dunst.paused {
+  background: @peach;
   color: @base;
 }
 
